@@ -11,6 +11,7 @@ module.exports = (options) => {
     specs,
   } = options;
 
+  // find way to generalize this
   const colorSpecs = extractSpecs(specs, "Color");
   const fontSizeSpecs = extractSpecs(specs, "SizeFont");
 
