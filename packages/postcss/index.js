@@ -31,12 +31,12 @@ module.exports = (options) => {
         if (type === types.COLOR_PALETTE && !isOfficialColor) {
           const nearestColor = tinycolor(
             transforms.color({ colorSpecs, color })
-          );
+          ).toHexString();
 
           onInvalid({
             type,
             prop,
-            value: tinycolor(value),
+            value: color.toHexString(),
             nearestValue: nearestColor,
             context: declaration,
           });
