@@ -90,18 +90,19 @@ function generateSummaryTable() {
       return type !== types.UNKNOWN;
     })
   );
-
+  
+  const pieRadius = 5;
+  let totalCorrect = 0;
+  let totalIncorrect = 0;
+  
   groupedInvalidScores.forEach(([type, scores]) => {
     const incorrectAmount = scores.length;
-    const correctAmount =
-      getCorrectAmount(groupedValidScores, type);
-    console.log({ incorrectAmount, correctAmount });
-    const pieRadius = 5;
+    const correctAmount = getCorrectAmount(groupedValidScores, type);
     const percentagePie = new Pie(
       pieRadius,
       [
-        { label: "Correct", value: correctAmount, color: [0, 128, 0] },
-        { label: "Incorrect", value: incorrectAmount, color: [255, 0, 0] },
+        { label: "Correct", value: correctAmount },
+        { label: "Incorrect", value: incorrectAmount },
       ],
       { legend: true }
     );
@@ -112,13 +113,55 @@ function generateSummaryTable() {
       chalk.redBright(incorrectAmount),
       percentagePie.toString(),
     ]);
+
+    totalCorrect = totalCorrect + correctAmount;
+    totalIncorrect = totalIncorrect + incorrectAmount;
   });
+
+  const percentagePie = new Pie(
+    pieRadius,
+    [
+      { label: "Correct", value: totalCorrect },
+      { label: "Incorrect", value: totalIncorrect },
+    ],
+    { legend: true }
+  );
+  
+  result.push([
+    chalk.whiteBright("Total"),
+    chalk.greenBright(totalCorrect),
+    chalk.redBright(totalIncorrect),
+    percentagePie.toString(),
+  ]);
 
   return result;
 }
 
 function getSummaryTables() {
   return [generateUnofficialTable(), generateSummaryTable()];
+}
+
+function getGrade(percentage) {
+  const A_MINUS = 93;
+  const B_MINUS = 85;
+  const C_MINUS = 75;
+  const D_MINUS = 70;
+
+  if (percentage >= A_MINUS) {
+    return "A";
+  }
+  else if (percentage >= B_MINUS) {
+    return "B";
+  }
+  else if (percentage >= C_MINUS) {
+    return "C";
+  } 
+  else if (percentage >= D_MINUS) {
+    return "D";
+  } 
+  else {
+    return "F";
+  }
 }
 
 class ScorecardCommand extends Command {
@@ -176,6 +219,21 @@ class ScorecardCommand extends Command {
               background: "transparent",
             });
             this.log(summaryTable.toString());
+
+            CFonts.say("Grade", {
+              font: "grid",
+              align: "left",
+              colors: ["cyan", "#333"],
+              background: "transparent",
+            });
+            const percentage = ((validScores.length / invalidScores.length) * 100).toFixed(2); 
+            const grade = getGrade(percentage);
+            CFonts.say(grade, {
+              font: "block",
+              align: "left",
+              colors: ["system"],
+              background: "transparent",
+            });
           },
           onInvalid: (score) => {
             invalidScores.push(score);
