@@ -16,7 +16,9 @@
     "@oclif/dev-cli": "^1",
     "eslint": "^5.13",
     "eslint-config-oclif": "^3.1",
-    "globby": "^10"
+    "eslint-plugin-prettier": "^3.3.1",
+    "globby": "^10",
+    "prettier": "^2.2.1"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -46,6 +48,7 @@
     "posttest": "eslint .",
     "prepack": "oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "format": "prettier --write ."
   }
 }

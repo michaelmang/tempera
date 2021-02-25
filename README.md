@@ -1,5 +1,4 @@
-monet
-=====
+# monet
 
 A design tokens toolkit.
 
@@ -9,11 +8,15 @@ A design tokens toolkit.
 [![License](https://img.shields.io/npm/l/monet.svg)](https://github.com/michaelmang/monet/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
 $ npm install -g monet
 $ monet COMMAND
@@ -25,11 +28,15 @@ USAGE
   $ monet COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`monet hello`](#monet-hello)
-* [`monet help [COMMAND]`](#monet-help-command)
+
+- [`monet hello`](#monet-hello)
+- [`monet help [COMMAND]`](#monet-help-command)
 
 ## `monet hello`
 
@@ -65,4 +72,5 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
+
 <!-- commandsstop -->
