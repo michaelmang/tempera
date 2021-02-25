@@ -1,0 +1,51 @@
+{
+  "name": "monet",
+  "description": "A design tokens toolkit.",
+  "version": "0.0.0",
+  "author": "Mike Mangialardi",
+  "bin": {
+    "monet": "./bin/run"
+  },
+  "bugs": "https://github.com/michaelmang/monet/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^3"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "eslint": "^5.13",
+    "eslint-config-oclif": "^3.1",
+    "globby": "^10"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/michaelmang/monet",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "monet",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "michaelmang/monet",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint .",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
