@@ -13,6 +13,24 @@ module.exports.getClosest = (list, goal) => {
   });
 }
 
+const tinycolor = require("tinycolor2");
+const { types } = require("../stubs");
+module.exports.extractType = (declaration) => {
+  const { prop, value } = declaration;
+
+  const color = tinycolor(value);
+  const isValidColor = !parseInt(value) && color.isValid();
+  if (isValidColor) {
+    return types.COLOR_PALETTE;
+  }
+  
+  if (prop === types.FONT_SIZE) {
+    return types.FONT_SIZE;
+  }
+
+  return types.UNKNOWN;
+};
+
 module.exports.noop = () => {};
 
 module.exports.parseNumber = (valueWithNumber) => {
