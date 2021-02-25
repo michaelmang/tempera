@@ -1,0 +1,20 @@
+{
+  "name": "@monet/postcss-scorecard",
+  "version": "1.0.0",
+  "description": "A postcss plugin for analyzing design system adoption.",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nearest-color": "^0.4.4",
+    "tinycolor2": "^1.4.2"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.6",
+    "prettier": "^2.2.1"
+  }
+}

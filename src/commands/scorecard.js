@@ -1,20 +1,29 @@
-const {Command, flags} = require('@oclif/command')
+const { Command, flags } = require("@oclif/command");
 
-class HelloCommand extends Command {
+class ScorecardCommand extends Command {
   async run() {
-    const {flags} = this.parse(HelloCommand)
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from ./src/commands/hello.js`)
+    const { flags } = this.parse(ScorecardCommand);
+    const site = flags.site;
+    try {
+      new URL(site);
+    } catch (error) {
+      this.error(`The provide site is not a valid url: ${site}`);
+    }
+
+    this.log(`hello ${site} from ./src/commands/hello.js`);
   }
 }
 
-HelloCommand.description = `Describe the command here
+ScorecardCommand.description = `analyze adoption of a design system 
 ...
-Extra documentation goes here
-`
+Scorecard analyzes a web app or web page, collecting 
+design system adoption metrics and insights for adoption.
+`;
 
-HelloCommand.flags = {
-  name: flags.string({char: 'n', description: 'name to print'}),
-}
+ScorecardCommand.flags = {
+  site: flags.string({ char: "s", description: "site url to analyze" }),
+};
 
-module.exports = HelloCommand
+ScorecardCommand.title = "Scorecard";
+
+module.exports = ScorecardCommand;
