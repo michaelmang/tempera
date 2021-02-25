@@ -34,7 +34,7 @@ module.exports = (options) => {
           onInvalid({
             type: "Color Palette",
             prop,
-            value,
+            value: tinycolor(value),
             nearestValue: nearestColor,
             context: declaration,
           });
