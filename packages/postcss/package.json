@@ -1,5 +1,5 @@
 {
-  "name": "@monet/postcss-scorecard",
+  "name": "@tempera/postcss-scorecard",
   "version": "1.0.0",
   "description": "A postcss plugin for analyzing design system adoption.",
   "main": "index.js",

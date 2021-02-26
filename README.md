@@ -1,11 +1,11 @@
-# monet
+# tempera
 
 A design tokens toolkit.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/monet.svg)](https://npmjs.org/package/monet)
-[![Downloads/week](https://img.shields.io/npm/dw/monet.svg)](https://npmjs.org/package/monet)
-[![License](https://img.shields.io/npm/l/monet.svg)](https://github.com/michaelmang/monet/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/tempera.svg)](https://npmjs.org/package/tempera)
+[![Downloads/week](https://img.shields.io/npm/dw/tempera.svg)](https://npmjs.org/package/tempera)
+[![License](https://img.shields.io/npm/l/tempera.svg)](https://github.com/michaelmang/tempera/blob/master/package.json)
 
 <!-- toc -->
 
@@ -18,14 +18,14 @@ A design tokens toolkit.
 <!-- usage -->
 
 ```sh-session
-$ npm install -g monet
-$ monet COMMAND
+$ npm install -g tempera
+$ tempera COMMAND
 running command...
-$ monet (-v|--version|version)
-monet/0.0.0 darwin-x64 node-v14.15.0
-$ monet --help [COMMAND]
+$ tempera (-v|--version|version)
+tempera/0.0.0 darwin-x64 node-v14.15.0
+$ tempera --help [COMMAND]
 USAGE
-  $ monet COMMAND
+  $ tempera COMMAND
 ...
 ```
 
@@ -35,16 +35,16 @@ USAGE
 
 <!-- commands -->
 
-- [`monet hello`](#monet-hello)
-- [`monet help [COMMAND]`](#monet-help-command)
+- [`tempera hello`](#tempera-hello)
+- [`tempera help [COMMAND]`](#tempera-help-command)
 
-## `monet hello`
+## `tempera hello`
 
 Describe the command here
 
 ```
 USAGE
-  $ monet hello
+  $ tempera hello
 
 OPTIONS
   -n, --name=name  name to print
@@ -54,15 +54,15 @@ DESCRIPTION
   Extra documentation goes here
 ```
 
-_See code: [src/commands/hello.js](https://github.com/michaelmang/monet/blob/v0.0.0/src/commands/hello.js)_
+_See code: [src/commands/hello.js](https://github.com/michaelmang/tempera/blob/v0.0.0/src/commands/hello.js)_
 
-## `monet help [COMMAND]`
+## `tempera help [COMMAND]`
 
-display help for monet
+display help for tempera
 
 ```
 USAGE
-  $ monet help [COMMAND]
+  $ tempera help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for

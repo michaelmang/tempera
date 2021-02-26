@@ -1,12 +1,12 @@
 {
-  "name": "monet",
+  "name": "tempera",
   "description": "A design tokens toolkit.",
   "version": "0.0.0",
   "author": "Mike Mangialardi",
   "bin": {
-    "monet": "./bin/run"
+    "tempera": "./bin/run"
   },
-  "bugs": "https://github.com/michaelmang/monet/issues",
+  "bugs": "https://github.com/michaelmang/tempera/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -41,7 +41,7 @@
     "/oclif.manifest.json",
     "/src"
   ],
-  "homepage": "https://github.com/michaelmang/monet",
+  "homepage": "https://github.com/michaelmang/tempera",
   "keywords": [
     "oclif"
   ],
@@ -49,12 +49,12 @@
   "main": "src/index.js",
   "oclif": {
     "commands": "./src/commands",
-    "bin": "monet",
+    "bin": "tempera",
     "plugins": [
       "@oclif/plugin-help"
     ]
   },
-  "repository": "michaelmang/monet",
+  "repository": "michaelmang/tempera",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint .",
