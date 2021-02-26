@@ -1,6 +1,8 @@
-# tempera
+# Tempera
 
-A design tokens toolkit.
+A CLi toolkit for aiding design tokens adoption.
+
+![](https://dam-13749.kxcdn.com/wp-content/uploads/2017/01/simonetta-vespucci.jpg)
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/tempera.svg)](https://npmjs.org/package/tempera)
@@ -38,20 +40,21 @@ USAGE
 - [`tempera hello`](#tempera-hello)
 - [`tempera help [COMMAND]`](#tempera-help-command)
 
-## `tempera hello`
+## `tempera scorecard`
 
-Describe the command here
+Gather metrics around the adoption of a design system.
 
 ```
 USAGE
-  $ tempera hello
+  $ tempera scorecard
 
 OPTIONS
-  -n, --name=name  name to print
+  -n, --site=site  site url to analyze
 
 DESCRIPTION
   ...
-  Extra documentation goes here
+  Scorecard analyzes a web app or web page, collecting 
+  design system adoption metrics and insights for adoption.
 ```
 
 _See code: [src/commands/hello.js](https://github.com/michaelmang/tempera/blob/v0.0.0/src/commands/hello.js)_
