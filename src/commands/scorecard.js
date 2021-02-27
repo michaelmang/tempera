@@ -15,7 +15,7 @@ const expandShorthand = require("postcss-shorthand-expand");
 const tokens = require("../stubs/tokens");
 const { validateSpecs } = require("../utils");
 const scorecard = require("../../packages/postcss");
-const { types } = require("../../packages/postcss/stubs");
+const { types } = require("../../packages/css-types");
 
 let invalidScores = [];
 let validScores = [];

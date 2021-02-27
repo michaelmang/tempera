@@ -1,8 +1,8 @@
 const tinycolor = require("tinycolor2");
 
 const transforms = require("./transforms/common");
-const { types } = require("./stubs");
-const { extractSpecs, noop, extractType } = require("./utils");
+const { extractSpecs, noop } = require("./utils");
+const { getType, types } = require("../css-types");
 
 module.exports = (options) => {
   const {
@@ -22,13 +22,13 @@ module.exports = (options) => {
       root.walkDecls((declaration) => {
         const { prop, value } = declaration;
 
-        const type = extractType(declaration);
+        const type = getType(prop);
 
         const color = tinycolor(value);
         const isOfficialColor = Object.values(colorSpecs).includes(
           color.toHexString()
         );
-        if (type === types.COLOR_PALETTE && !isOfficialColor) {
+        if (type === types.COLOR && !isOfficialColor) {
           const nearestColor = tinycolor(
             transforms.color({ colorSpecs, color })
           ).toHexString();
@@ -45,11 +45,11 @@ module.exports = (options) => {
         }
 
         const isOfficialFontSize = Object.values(fontSizeSpecs).includes(value);
-        if ((type === types.FONT_SIZE, fontSizeSpecs && !isOfficialFontSize)) {
-          const nearestFontSize = (declaration.value = transforms.fontSize({
+        if ((type === types.FONT_SIZE && !isOfficialFontSize)) {
+          const nearestFontSize = transforms.fontSize({
             fontSizeSpecs,
             value,
-          }));
+          });
 
           onInvalid({
             type,
