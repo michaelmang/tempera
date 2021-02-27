@@ -226,7 +226,7 @@ class ScorecardCommand extends Command {
               colors: ["cyan", "#333"],
               background: "transparent",
             });
-            const percentage = ((validScores.length / invalidScores.length) * 100).toFixed(2); 
+            const percentage = ((validScores.length / (validScores.length + invalidScores.length)) * 100).toFixed(2); 
             const grade = getGrade(percentage);
             CFonts.say(grade, {
               font: "block",
