@@ -1,0 +1,11 @@
+module.exports.delay = /delay/g;
+module.exports.duration = /duration/g;
+module.exports.timing = /timing/g;
+module.exports.borderRadius = /border-radius/g;
+module.exports.breakpoint = /max-width/g;
+module.exports.color = /color/g;
+module.exports.fontFamily = /font-family/g;
+module.exports.fontSize = /font-size/g;
+module.exports.fontWeight = /font-weight/g;
+module.exports.lineHeight = /line-height/g;
+module.exports.sizing = /margin|padding/g;
