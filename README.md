@@ -37,7 +37,7 @@ USAGE
 
 <!-- commands -->
 
-- [`tempera hello`](#tempera-hello)
+- [`tempera scorecard`](#tempera-scorecard)
 - [`tempera help [COMMAND]`](#tempera-help-command)
 
 ## `tempera scorecard`
@@ -53,7 +53,7 @@ OPTIONS
 
 DESCRIPTION
   ...
-  Scorecard analyzes a web app or web page, collecting 
+  Scorecard analyzes a web app or web page, collecting
   design system adoption metrics and insights for adoption.
 ```
 
