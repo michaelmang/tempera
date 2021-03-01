@@ -48,18 +48,18 @@ module.exports = (options) => {
           return null;
         }
 
-        const isOfficialFontSize = Object.values(typeSpecs).includes(value);
-        if (type === types.FONT_SIZE && !isOfficialFontSize) {
-          const nearestFontSize = transforms.fontSize({
-            fontSizeSpecs: typeSpecs,
-            value,
+        const isOfficialFontFamily = Object.values(typeSpecs).includes(value);
+        if (type === types.FONT_FAMILY && !isOfficialFontFamily) {
+          const nearestFontFamily = transforms.fontFamily({
+            fontFamilySpecs: typeSpecs,
+            fontFamily: value,
           });
-
+          
           onInvalid({
             type,
             prop,
             value,
-            nearestValue: nearestFontSize,
+            nearestValue: nearestFontFamily,
             context: declaration,
           });
 

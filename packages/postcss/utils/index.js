@@ -16,8 +16,18 @@ module.exports.getClosest = (list, goal) => {
   });
 };
 
+module.exports.findIntersection = (setA, setB) => {
+  let intersection = new Set();
+  for (let elem of setB) {
+    if (setA.has(elem)) {
+      intersection.add(elem);
+    }
+  }
+  return intersection;
+}
+
 module.exports.noop = () => {};
 
-module.exports.parseNumber = (valueWithNumber) => {
-  return valueWithNumber.replace(/[^0-9|.]/gm, "");
+module.exports.parseUnit = (valueWithNumber) => {
+  return valueWithNumber.replace(/[0-9|.]/gm, "");
 };
