@@ -4,12 +4,12 @@
   "description": "A utility for matching CSS properties by type.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash.kebabcase": "^4.1.1"
+    "prettier": "^2.2.1"
   }
 }

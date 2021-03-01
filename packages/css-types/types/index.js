@@ -1,12 +1,12 @@
-module.exports.DELAY = "delay";
-module.exports.DURATION = "duration";
-module.exports.TIMING = "timing";
 module.exports.BORDER_RADIUS = "border-radius";
 module.exports.BREAKPOINT = "max-width";
 module.exports.COLOR = "color";
+module.exports.DELAY = "delay";
+module.exports.DURATION = "duration";
 module.exports.FONT_FAMILY = "font-family";
 module.exports.FONT_SIZE = "font-size";
 module.exports.FONT_WEIGHT = "font-weight";
 module.exports.LINE_HEIGHT = "line-height";
 module.exports.SIZING = "sizing";
+module.exports.TIMING = "timing";
 module.exports.UNKNOWN = "unknown";

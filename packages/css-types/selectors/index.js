@@ -1,5 +1,3 @@
-const kebabCase = require("lodash.kebabcase");
-
 const matchers = require("../matchers");
 const types = require("../types");
 
@@ -14,5 +12,5 @@ module.exports.getType = (property) => {
     return types.UNKNOWN;
   }
 
-  return Object.values(types).find((type) => type === kebabCase(key));
+  return types[key];
 };
