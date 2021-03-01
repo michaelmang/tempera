@@ -90,11 +90,11 @@ function generateSummaryTable() {
       return type !== types.UNKNOWN;
     })
   );
-  
+
   const pieRadius = 5;
   let totalCorrect = 0;
   let totalIncorrect = 0;
-  
+
   groupedInvalidScores.forEach(([type, scores]) => {
     const incorrectAmount = scores.length;
     const correctAmount = getCorrectAmount(groupedValidScores, type);
@@ -126,7 +126,7 @@ function generateSummaryTable() {
     ],
     { legend: true }
   );
-  
+
   result.push([
     chalk.whiteBright("Total"),
     chalk.greenBright(totalCorrect),
@@ -149,17 +149,13 @@ function getGrade(percentage) {
 
   if (percentage >= A_MINUS) {
     return "A";
-  }
-  else if (percentage >= B_MINUS) {
+  } else if (percentage >= B_MINUS) {
     return "B";
-  }
-  else if (percentage >= C_MINUS) {
+  } else if (percentage >= C_MINUS) {
     return "C";
-  } 
-  else if (percentage >= D_MINUS) {
+  } else if (percentage >= D_MINUS) {
     return "D";
-  } 
-  else {
+  } else {
     return "F";
   }
 }
@@ -226,7 +222,11 @@ class ScorecardCommand extends Command {
               colors: ["cyan", "#333"],
               background: "transparent",
             });
-            const percentage = ((validScores.length / (validScores.length + invalidScores.length)) * 100).toFixed(2); 
+            const percentage = (
+              (validScores.length /
+                (validScores.length + invalidScores.length)) *
+              100
+            ).toFixed(2);
             const grade = getGrade(percentage);
             CFonts.say(grade, {
               font: "block",

@@ -10,5 +10,4 @@ module.exports.fontSize = ({ fontSizeSpecs, value }) => {
     parseNumber(fontSize)
   );
   return `${getClosest(fontSizes, parseNumber(value))}rem`;
-}
-
+};

@@ -2,7 +2,7 @@ const tinycolor = require("tinycolor2");
 
 const transforms = require("./transforms/common");
 const { extractSpecs, noop } = require("./utils");
-const { getType, types } = require("../css-types");
+const { getMatcher, getType, types } = require("../css-types");
 
 module.exports = (options) => {
   const {
@@ -12,10 +12,6 @@ module.exports = (options) => {
     specs,
   } = options;
 
-  // find way to generalize this
-  const colorSpecs = extractSpecs(specs, "Color");
-  const fontSizeSpecs = extractSpecs(specs, "SizeFont");
-
   return {
     postcssPlugin: "postcss-scorecard",
     Once(root) {
@@ -23,12 +19,20 @@ module.exports = (options) => {
         const { prop, value } = declaration;
 
         const type = getType(prop);
+        const matcher = getMatcher(prop);
+        const typeSpecs = extractSpecs(specs, matcher);
 
         const color = tinycolor(value);
-        const isOfficialColor = Object.values(colorSpecs).includes(
+        const isOfficialColor = Object.values(typeSpecs).includes(
           color.toHexString()
         );
         if (type === types.COLOR && !isOfficialColor) {
+          const colorSpecs = Object.fromEntries(
+            Object.entries(typeSpecs).map(([key, value]) => [
+              key,
+              tinycolor(value).toHexString(),
+            ])
+          );
           const nearestColor = tinycolor(
             transforms.color({ colorSpecs, color })
           ).toHexString();
@@ -44,10 +48,10 @@ module.exports = (options) => {
           return null;
         }
 
-        const isOfficialFontSize = Object.values(fontSizeSpecs).includes(value);
-        if ((type === types.FONT_SIZE && !isOfficialFontSize)) {
+        const isOfficialFontSize = Object.values(typeSpecs).includes(value);
+        if (type === types.FONT_SIZE && !isOfficialFontSize) {
           const nearestFontSize = transforms.fontSize({
-            fontSizeSpecs,
+            fontSizeSpecs: typeSpecs,
             value,
           });
 
