@@ -175,8 +175,8 @@ class ScorecardCommand extends Command {
 
     try {
       fs.readFileSync(tokens, "utf-8");
-      const relativePath = path.relative(__dirname, tokens);
-      specs = require("./" + relativePath);
+      const relativeTokensPath = path.relative(__dirname, tokens);
+      specs = require("./" + relativeTokensPath);
     } catch (error) {
       this.error(
         chalk.redBright(
@@ -189,6 +189,28 @@ class ScorecardCommand extends Command {
       this.error(
         `The provided specs are not valid. The specs should be formatted as key-value tokens: ${tokens}`
       );
+    }
+
+    if (json) {
+      try {
+        fs.writeFileSync(
+          output,
+          `Design Scorecard | Generated On ${new Date()} \n\n`
+        );
+      } catch (error) {
+        this.error(
+          chalk.redBright(`The provided output file does not exist: ${output}`)
+        );
+      }
+
+      const isJSON = path.parse(output).ext.toLowerCase() !== ".json";
+      if (isJSON) {
+        this.error(
+          chalk.redBright(
+            `The provided output file is not valid. Please provide a JSON file: ${output}`
+          )
+        );
+      }
     }
 
     CFonts.say("Design|Scorecard", {
@@ -285,7 +307,11 @@ design system adoption metrics and insights for adoption.
 `;
 
 ScorecardCommand.flags = {
-  site: flags.string({ char: "s", description: "site url to analyze", required: true }),
+  site: flags.string({
+    char: "s",
+    description: "site url to analyze",
+    required: true,
+  }),
   tokens: flags.string({
     char: "t",
     description: "relative path to tokens file",
