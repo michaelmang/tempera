@@ -52,6 +52,7 @@ OPTIONS
   -s, --site=site  site url to analyze
   -t, --tokens=tokens  relative path to tokens file
   -j, --json=json  (optional) flag to enable printing output as a JSON blob
+  -o, --output=output  (optional) relative path for JSON output; requires -j, --json to be enabled
 
 DESCRIPTION
   ...

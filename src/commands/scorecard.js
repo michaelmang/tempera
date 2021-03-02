@@ -161,6 +161,7 @@ class ScorecardCommand extends Command {
     const site = flags.site;
     const tokens = flags.tokens;
     const json = flags.json;
+    const output = flags.output;
 
     try {
       new URL(site);
@@ -295,6 +296,12 @@ ScorecardCommand.flags = {
     description: "flag to enable printing score as a JSON blob",
     default: false,
     required: false,
+  }),
+  output: flags.string({
+    char: "o",
+    description: "relative path for JSON output",
+    required: false,
+    dependsOn: ["json"],
   }),
 };
 
