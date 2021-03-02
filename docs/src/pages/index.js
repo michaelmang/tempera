@@ -8,32 +8,35 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Easy to Use',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: 'Ensure Adoption',
+    imageUrl: 'img/michelangelo.jpg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Tempera comes with a <code>scorecard</code> command that generates a scorecard based on your site's
+        adoption to an official set of design tokens. Analyze the adoption of a design
+        system across all your applications with ease.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: 'Ease Migration',
+    imageUrl: 'img/venus.jpg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Tempera's <code>scorecard</code> command collects all unofficial styles from a site
+        and calculates the nearest official style in most cases. Make migrating all your
+        applications to a new design system a breeze.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: 'Build Custom Tools',
+    imageUrl: 'img/simonetta-vespucci-wide.jpg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Tempera's <code>scorecard</code> command comes with the option to print
+        a scorecard as a JSON blob, exposing the potential for custom reporters
+        and other tools that meet your needs for design tokens adoption.
       </>
     ),
   },
@@ -44,7 +47,7 @@ function Feature({imageUrl, title, description}) {
   return (
     <div className={clsx('col col--4', styles.feature)}>
       {imgUrl && (
-        <div className="text--center">
+        <div>
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
       )}
