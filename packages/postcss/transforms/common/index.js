@@ -30,6 +30,9 @@ module.exports.fontFamily = ({ fontFamilySpecs, fontFamily }) => {
   return Array.from(result).join(" ");
 };
 
+module.exports.number = ({ numberSpecs, value }) => {
+  const range = Object.entries(numberSpecs).flatMap(([_, number]) =>
+    parseNumber(number)
   );
-  return `${getClosest(fontSizes, parseNumber(value))}rem`;
+  return `${getClosest(range, parseNumber(value))}rem`;
 };

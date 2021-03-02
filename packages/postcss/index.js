@@ -1,7 +1,7 @@
 const tinycolor = require("tinycolor2");
 
 const transforms = require("./transforms/common");
-const { extractSpecs, noop } = require("./utils");
+const { extractSpecs, noop, parseUnit, toRem, parseNumber } = require("./utils");
 const { getMatcher, getType, types } = require("../css-types");
 
 module.exports = (options) => {
@@ -82,6 +82,34 @@ module.exports = (options) => {
           });
 
           return null;
+        }
+
+        const isLonghand = value.split(" ").length === 1;
+        if (isLonghand && parseFloat(value)) {
+          const numberSpecs = Object.fromEntries(Object.entries(typeSpecs).map(([specKey, specValue]) => {
+            return [specKey, toRem(specValue)];
+          }));
+
+          const remValue = toRem(value);
+
+          if (!Object.values(numberSpecs).some(x => parseNumber(x) === parseNumber(remValue))) {
+            const nearestValue = transforms.number({
+              numberSpecs,
+              value: remValue,
+            });
+
+            const unit = parseUnit(remValue);
+
+            onInvalid({
+              type,
+              prop,
+              value: remValue,
+              nearestValue: unit !== "rem" ? "" : nearestValue,
+              context: declaration,
+            });
+
+            return null;
+          }
         }
 
         onValid({

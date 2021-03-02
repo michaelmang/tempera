@@ -185,7 +185,24 @@ class ScorecardCommand extends Command {
     const spinner = ora(`Analyzing ${chalk.blueBright(site)}...\n`).start();
 
     await postcss()
-      .use(pxToRem)
+      .use(
+        pxToRem({
+          propList: [
+            "font-size",
+            "line-height",
+            "letter-spacing",
+            "margin-top",
+            "margin-bottom",
+            "margin-left",
+            "margin-right",
+            "padding-top",
+            "padding-bottom",
+            "padding-left",
+            "padding-right",
+          ],
+          unitPrecision: 3,
+        })
+      )
       .use(expandShorthand)
       .use(
         scorecard({
