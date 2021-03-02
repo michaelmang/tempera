@@ -5,6 +5,7 @@ const Pie = require("cli-pie");
 const Table = require("cli-table3");
 const extractCss = require("extract-css-core");
 const fs = require("fs");
+const beautify = require("json-beautify");
 const groupBy = require("lodash.groupBy");
 const startCase = require("lodash.startcase");
 const sortBy = require("lodash.sortby");
@@ -286,22 +287,30 @@ class ScorecardCommand extends Command {
               output,
             });
 
-            const percentage = getPercentage(validScores.length, invalidScores.length);
+            const percentage = getPercentage(
+              validScores.length,
+              invalidScores.length
+            );
             const grade = getGrade(percentage);
 
             if (json) {
               fs.writeFileSync(
                 output,
-                JSON.stringify({
-                  ...unofficialTable,
-                  ...summaryTable,
-                  total: {
-                    correct: validScores.length,
-                    incorrect: invalidScores.length,
-                    percentage,
-                    grade,
+                beautify(
+                  {
+                    ...unofficialTable,
+                    ...summaryTable,
+                    total: {
+                      correct: validScores.length,
+                      incorrect: invalidScores.length,
+                      percentage,
+                      grade,
+                    },
                   },
-                })
+                  null,
+                  2,
+                  100
+                )
               );
               this.log(
                 chalk.greenBright(
@@ -333,7 +342,7 @@ class ScorecardCommand extends Command {
               colors: ["cyan", "#333"],
               background: "transparent",
             });
-            
+
             CFonts.say(grade, {
               font: "block",
               align: "left",

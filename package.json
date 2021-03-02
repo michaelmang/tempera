@@ -16,6 +16,7 @@
     "cli-pie": "^2.4.2",
     "cli-table3": "^0.6.0",
     "extract-css-core": "^2.3.1",
+    "json-beautify": "^1.1.1",
     "lodash.groupby": "^4.6.0",
     "lodash.kebabcase": "^4.1.1",
     "lodash.sortby": "^4.7.0",
