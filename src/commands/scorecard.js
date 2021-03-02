@@ -160,7 +160,7 @@ class ScorecardCommand extends Command {
     const { flags } = this.parse(ScorecardCommand);
     const site = flags.site;
     const tokens = flags.tokens;
-    
+
     try {
       new URL(site);
     } catch (error) {
@@ -172,13 +172,14 @@ class ScorecardCommand extends Command {
     let specs;
 
     try {
-      fs.readFileSync(tokens, 'utf-8');
+      fs.readFileSync(tokens, "utf-8");
       const relativePath = path.relative(__dirname, tokens);
-      specs = require('./' + relativePath);
-    }
-    catch (error) {
+      specs = require("./" + relativePath);
+    } catch (error) {
       this.error(
-        chalk.redBright(`No tokens were found from the provided file path: ${tokens}`)
+        chalk.redBright(
+          `No tokens were found from the provided file path: ${tokens}`
+        )
       );
     }
 
@@ -283,7 +284,10 @@ design system adoption metrics and insights for adoption.
 
 ScorecardCommand.flags = {
   site: flags.string({ char: "s", description: "site url to analyze" }),
-  tokens: flags.string({ char: "t", description: "relative path to tokens file" }),
+  tokens: flags.string({
+    char: "t",
+    description: "relative path to tokens file",
+  }),
 };
 
 ScorecardCommand.title = "Scorecard";
