@@ -49,7 +49,8 @@ USAGE
   $ tempera scorecard
 
 OPTIONS
-  -n, --site=site  site url to analyze
+  -s, --site=site  site url to analyze
+  -t, --tokens=tokens  relative path to tokens file
 
 DESCRIPTION
   ...

@@ -1,7 +1,13 @@
 const tinycolor = require("tinycolor2");
 
 const transforms = require("./transforms/common");
-const { extractSpecs, noop, parseUnit, toRem, parseNumber } = require("./utils");
+const {
+  extractSpecs,
+  noop,
+  parseUnit,
+  toRem,
+  parseNumber,
+} = require("./utils");
 const { getMatcher, getType, types } = require("../css-types");
 
 module.exports = (options) => {
@@ -19,7 +25,7 @@ module.exports = (options) => {
         const { prop, value } = declaration;
 
         const type = getType(prop);
-        
+
         if (type === types.UNKNOWN) {
           return null;
         }
@@ -72,7 +78,7 @@ module.exports = (options) => {
             fontFamilySpecs: typeSpecs,
             fontFamily: value,
           });
-          
+
           onInvalid({
             type,
             prop,
@@ -86,13 +92,19 @@ module.exports = (options) => {
 
         const isLonghand = value.split(" ").length === 1;
         if (isLonghand && parseFloat(value)) {
-          const numberSpecs = Object.fromEntries(Object.entries(typeSpecs).map(([specKey, specValue]) => {
-            return [specKey, toRem(specValue)];
-          }));
+          const numberSpecs = Object.fromEntries(
+            Object.entries(typeSpecs).map(([specKey, specValue]) => {
+              return [specKey, toRem(specValue)];
+            })
+          );
 
           const remValue = toRem(value);
 
-          if (!Object.values(numberSpecs).some(x => parseNumber(x) === parseNumber(remValue))) {
+          if (
+            !Object.values(numberSpecs).some(
+              (x) => parseNumber(x) === parseNumber(remValue)
+            )
+          ) {
             const nearestValue = transforms.number({
               numberSpecs,
               value: remValue,

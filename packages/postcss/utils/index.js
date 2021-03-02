@@ -24,19 +24,22 @@ module.exports.findIntersection = (setA, setB) => {
     }
   }
   return intersection;
-}
+};
 
 module.exports.noop = () => {};
 
 module.exports.parseNumber = (valueWithNumber, { unitPrecision = 3 } = {}) => {
   return parseFloat(valueWithNumber).toFixed(unitPrecision);
-}
+};
 
 module.exports.parseUnit = (valueWithNumber) => {
   return valueWithNumber.replace(/[0-9|.]/gm, "");
 };
 
-module.exports.toRem = (valueWithNumber, { root = 16, unitPrecision = 3 } = {}) => {
+module.exports.toRem = (
+  valueWithNumber,
+  { root = 16, unitPrecision = 3 } = {}
+) => {
   const unit = this.parseUnit(valueWithNumber);
 
   if (unit !== "px") {

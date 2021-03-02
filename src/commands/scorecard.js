@@ -4,16 +4,17 @@ const CFonts = require("cfonts");
 const Pie = require("cli-pie");
 const Table = require("cli-table3");
 const extractCss = require("extract-css-core");
+const fs = require("fs");
 const groupBy = require("lodash.groupBy");
 const startCase = require("lodash.startcase");
 const sortBy = require("lodash.sortby");
 const ora = require("ora");
+const path = require("path");
 const postcss = require("postcss");
 const pxToRem = require("postcss-pxtorem");
 const expandShorthand = require("postcss-shorthand-expand");
 const tinycolor = require("tinycolor2");
 
-const tokens = require("../stubs/tokens");
 const { validateSpecs } = require("../utils");
 const scorecard = require("../../packages/postcss");
 const { types } = require("../../packages/css-types");
@@ -158,11 +159,27 @@ class ScorecardCommand extends Command {
   async run() {
     const { flags } = this.parse(ScorecardCommand);
     const site = flags.site;
+    const tokens = flags.tokens;
+
     try {
       new URL(site);
     } catch (error) {
       this.error(
         chalk.redBright(`The provide site is not a valid url: ${site}`)
+      );
+    }
+
+    let specs;
+
+    try {
+      fs.readFileSync(tokens, "utf-8");
+      const relativePath = path.relative(__dirname, tokens);
+      specs = require("./" + relativePath);
+    } catch (error) {
+      this.error(
+        chalk.redBright(
+          `No tokens were found from the provided file path: ${tokens}`
+        )
       );
     }
 
@@ -252,7 +269,7 @@ class ScorecardCommand extends Command {
           onValid: (score) => {
             validScores.push(score);
           },
-          specs: tokens,
+          specs,
         })
       )
       .process(css, { from: undefined });
@@ -267,6 +284,10 @@ design system adoption metrics and insights for adoption.
 
 ScorecardCommand.flags = {
   site: flags.string({ char: "s", description: "site url to analyze" }),
+  tokens: flags.string({
+    char: "t",
+    description: "relative path to tokens file",
+  }),
 };
 
 ScorecardCommand.title = "Scorecard";

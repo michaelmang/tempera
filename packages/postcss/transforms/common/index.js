@@ -11,19 +11,22 @@ function toFontSet(fontFamily) {
 module.exports.fontFamily = ({ fontFamilySpecs, fontFamily }) => {
   const fontFamilies = Object.values(fontFamilySpecs);
 
-  const result = fontFamilies.map(toFontSet).find(fontsSet => {
+  const result = fontFamilies.map(toFontSet).find((fontsSet) => {
     const result = findIntersection(fontsSet, toFontSet(fontFamily));
     return result && result.size;
   });
 
   if (!result) {
-    const officialMonoFamily = fontFamilies.find(x => x.includes("mono"));
+    const officialMonoFamily = fontFamilies.find((x) => x.includes("mono"));
     if (fontFamily.toLowerCase().includes("mono") && officialMonoFamily) {
       return officialMonoFamily;
     }
 
-    const fontFamilyEntries = Object.entries(fontFamilySpecs).map(([key, value]) => [key.toLowerCase(), value]);
-    const [_, value] = fontFamilyEntries.find(([key]) => key.includes("default")) || [];
+    const fontFamilyEntries = Object.entries(
+      fontFamilySpecs
+    ).map(([key, value]) => [key.toLowerCase(), value]);
+    const [_, value] =
+      fontFamilyEntries.find(([key]) => key.includes("default")) || [];
     return value || fontFamilies[0];
   }
 
