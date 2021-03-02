@@ -160,6 +160,7 @@ class ScorecardCommand extends Command {
     const { flags } = this.parse(ScorecardCommand);
     const site = flags.site;
     const tokens = flags.tokens;
+    const json = flags.json;
 
     try {
       new URL(site);
@@ -288,6 +289,12 @@ ScorecardCommand.flags = {
     char: "t",
     description: "relative path to tokens file",
     required: true,
+  }),
+  json: flags.boolean({
+    char: "j",
+    description: "flag to enable printing score as a JSON blob",
+    default: false,
+    required: false,
   }),
 };
 
