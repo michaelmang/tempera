@@ -4,16 +4,17 @@ const CFonts = require("cfonts");
 const Pie = require("cli-pie");
 const Table = require("cli-table3");
 const extractCss = require("extract-css-core");
+const fs = require("fs");
 const groupBy = require("lodash.groupBy");
 const startCase = require("lodash.startcase");
 const sortBy = require("lodash.sortby");
 const ora = require("ora");
+const path = require("path");
 const postcss = require("postcss");
 const pxToRem = require("postcss-pxtorem");
 const expandShorthand = require("postcss-shorthand-expand");
 const tinycolor = require("tinycolor2");
 
-const tokens = require("../stubs/tokens");
 const { validateSpecs } = require("../utils");
 const scorecard = require("../../packages/postcss");
 const { types } = require("../../packages/css-types");
@@ -168,6 +169,19 @@ class ScorecardCommand extends Command {
       );
     }
 
+    let specs;
+
+    try {
+      fs.readFileSync(tokens, 'utf-8');
+      const relativePath = path.relative(__dirname, tokens);
+      specs = require('./' + relativePath);
+    }
+    catch (error) {
+      this.error(
+        chalk.redBright(`No tokens were found from the provided file path: ${tokens}`)
+      );
+    }
+
     if (!validateSpecs(tokens)) {
       this.error(
         `The provided specs are not valid. The specs should be formatted as key-value tokens: ${tokens}`
@@ -254,7 +268,7 @@ class ScorecardCommand extends Command {
           onValid: (score) => {
             validScores.push(score);
           },
-          specs: tokens,
+          specs,
         })
       )
       .process(css, { from: undefined });
