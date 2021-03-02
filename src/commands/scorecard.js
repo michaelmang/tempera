@@ -31,7 +31,7 @@ function getPrintableValue(value) {
   return chalk.whiteBright(value);
 }
 
-function generateUnofficialTable() {
+function generateUnofficialTable({ json, output }) {
   const result = new Table({
     head: [
       "Type",
@@ -42,10 +42,23 @@ function generateUnofficialTable() {
     colWidths: [25, 25, 25, 25],
   });
 
+  let data = {
+    unofficial: [],
+  };
+
   sortBy(
     invalidScores.filter(({ type }) => type !== types.UNKNOWN),
     ["type", "prop"]
   ).forEach((score) => {
+    if (json) {
+      data.unofficial.push({
+        type: score.type,
+        attribute: score.prop,
+        unofficialValue: score.value,
+        nearestOfficialValue: score.nearestValue,
+      });
+    }
+
     result.push([
       chalk.whiteBright(startCase(score.type.toLowerCase())),
       chalk.whiteBright(score.prop),
@@ -54,7 +67,7 @@ function generateUnofficialTable() {
     ]);
   });
 
-  return result;
+  return json ? data : result;
 }
 
 function groupScoresByType(scores) {
@@ -75,7 +88,11 @@ function getCorrectAmount(groupedValidScores, invalidType) {
   return scores.length;
 }
 
-function generateSummaryTable() {
+function getPercentage(correctAmount, incorrectAmount) {
+  return ((correctAmount / (correctAmount + incorrectAmount)) * 100).toFixed(2);
+}
+
+function generateSummaryTable({ json, output }) {
   const result = new Table({
     head: ["Category", "Correct", "Incorrect", "Percentage"].map((x) =>
       chalk.blueBright(x)
@@ -90,9 +107,23 @@ function generateSummaryTable() {
   let totalCorrect = 0;
   let totalIncorrect = 0;
 
+  let data = {
+    summary: [],
+  };
+
   groupedInvalidScores.forEach(([type, scores]) => {
     const incorrectAmount = scores.length;
     const correctAmount = getCorrectAmount(groupedValidScores, type);
+
+    if (json) {
+      data.summary.push({
+        category: startCase(type.toLowerCase()),
+        correct: correctAmount,
+        incorrect: incorrectAmount,
+        percentage: getPercentage(correctAmount, incorrectAmount),
+      });
+    }
+
     const percentagePie = new Pie(
       pieRadius,
       [
@@ -129,11 +160,11 @@ function generateSummaryTable() {
     percentagePie.toString(),
   ]);
 
-  return result;
+  return json ? data : result;
 }
 
-function getSummaryTables() {
-  return [generateUnofficialTable(), generateSummaryTable()];
+function getSummaryTables(props) {
+  return [generateUnofficialTable(props), generateSummaryTable(props)];
 }
 
 function getGrade(percentage) {
@@ -250,7 +281,35 @@ class ScorecardCommand extends Command {
           onFinished: () => {
             spinner.succeed();
 
-            const [unofficialTable, summaryTable] = getSummaryTables();
+            const [unofficialTable, summaryTable] = getSummaryTables({
+              json,
+              output,
+            });
+
+            const percentage = getPercentage(validScores.length, invalidScores.length);
+            const grade = getGrade(percentage);
+
+            if (json) {
+              fs.writeFileSync(
+                output,
+                JSON.stringify({
+                  ...unofficialTable,
+                  ...summaryTable,
+                  total: {
+                    correct: validScores.length,
+                    incorrect: invalidScores.length,
+                    percentage,
+                    grade,
+                  },
+                })
+              );
+              this.log(
+                chalk.greenBright(
+                  `⭐ Your scorecard has been outputted: ${output}`
+                )
+              );
+              return null;
+            }
 
             CFonts.say("Unofficial", {
               font: "grid",
@@ -274,12 +333,7 @@ class ScorecardCommand extends Command {
               colors: ["cyan", "#333"],
               background: "transparent",
             });
-            const percentage = (
-              (validScores.length /
-                (validScores.length + invalidScores.length)) *
-              100
-            ).toFixed(2);
-            const grade = getGrade(percentage);
+            
             CFonts.say(grade, {
               font: "block",
               align: "left",
