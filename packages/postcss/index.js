@@ -19,6 +19,11 @@ module.exports = (options) => {
         const { prop, value } = declaration;
 
         const type = getType(prop);
+        
+        if (type === types.UNKNOWN) {
+          return null;
+        }
+
         const matcher = getMatcher(prop);
         const typeSpecs = extractSpecs(specs, matcher);
 

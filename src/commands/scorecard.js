@@ -82,16 +82,8 @@ function generateSummaryTable() {
     colWidths: [15, 15, 15, 55],
   });
 
-  const groupedInvalidScores = groupScoresByType(
-    invalidScores.filter(({ type }) => {
-      return type !== types.UNKNOWN;
-    })
-  );
-  const groupedValidScores = groupScoresByType(
-    validScores.filter(({ type }) => {
-      return type !== types.UNKNOWN;
-    })
-  );
+  const groupedInvalidScores = groupScoresByType(invalidScores);
+  const groupedValidScores = groupScoresByType(validScores);
 
   const pieRadius = 5;
   let totalCorrect = 0;
