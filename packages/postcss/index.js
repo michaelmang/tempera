@@ -48,6 +48,19 @@ module.exports = (options) => {
           return null;
         }
 
+        const isOfficialTiming = Object.values(typeSpecs).includes(value);
+        if (type === types.TIMING && !isOfficialTiming) {
+          onInvalid({
+            type,
+            prop,
+            value,
+            nearestValue: "",
+            context: declaration,
+          });
+
+          return null;
+        }
+
         const isOfficialFontFamily = Object.values(typeSpecs).includes(value);
         if (type === types.FONT_FAMILY && !isOfficialFontFamily) {
           const nearestFontFamily = transforms.fontFamily({
