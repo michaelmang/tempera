@@ -1,6 +1,6 @@
 # Tempera
 
-A CLi toolkit for aiding design tokens adoption.
+A CLI toolkit for aiding design tokens adoption.
 
 ![](https://dam-13749.kxcdn.com/wp-content/uploads/2017/01/simonetta-vespucci.jpg)
 
