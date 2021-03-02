@@ -283,10 +283,11 @@ design system adoption metrics and insights for adoption.
 `;
 
 ScorecardCommand.flags = {
-  site: flags.string({ char: "s", description: "site url to analyze" }),
+  site: flags.string({ char: "s", description: "site url to analyze", required: true }),
   tokens: flags.string({
     char: "t",
     description: "relative path to tokens file",
+    required: true,
   }),
 };
 
