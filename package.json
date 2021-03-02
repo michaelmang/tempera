@@ -22,7 +22,8 @@
     "lodash.startcase": "^4.4.0",
     "ora": "^5.3.0",
     "postcss-pxtorem": "^5.1.1",
-    "postcss-shorthand-expand": "^1.0.1"
+    "postcss-shorthand-expand": "^1.0.1",
+    "tinycolor2": "^1.4.2"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",

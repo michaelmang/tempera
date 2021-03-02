@@ -11,6 +11,7 @@ const ora = require("ora");
 const postcss = require("postcss");
 const pxToRem = require("postcss-pxtorem");
 const expandShorthand = require("postcss-shorthand-expand");
+const tinycolor = require("tinycolor2");
 
 const tokens = require("../stubs/tokens");
 const { validateSpecs } = require("../utils");
@@ -21,8 +22,9 @@ let invalidScores = [];
 let validScores = [];
 
 function getPrintableValue(value) {
-  if (!parseInt(value) && value.isValid && value.isValid()) {
-    return chalk.hex(value.toHexString())(value.toHexString());
+  const color = tinycolor(value);
+  if (color.isValid()) {
+    return chalk.hex(color.toHexString())(color.toHexString());
   }
 
   return chalk.whiteBright(value);
