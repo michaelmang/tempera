@@ -158,6 +158,8 @@ class ScorecardCommand extends Command {
   async run() {
     const { flags } = this.parse(ScorecardCommand);
     const site = flags.site;
+    const tokens = flags.tokens;
+    
     try {
       new URL(site);
     } catch (error) {
@@ -267,6 +269,7 @@ design system adoption metrics and insights for adoption.
 
 ScorecardCommand.flags = {
   site: flags.string({ char: "s", description: "site url to analyze" }),
+  tokens: flags.string({ char: "t", description: "relative path to tokens file" }),
 };
 
 ScorecardCommand.title = "Scorecard";
