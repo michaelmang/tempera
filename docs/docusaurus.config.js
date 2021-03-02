@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Tempera',
   tagline: 'A CLI toolkit for aiding design tokens adoption.',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://tempera.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

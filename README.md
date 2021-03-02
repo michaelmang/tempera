@@ -1,9 +1,10 @@
 # Tempera
 
-A CLI toolkit for aiding design tokens adoption.
+A CLI toolkit for aiding design tokens adoption. | [View Docs](https://tempera.netlify.app)
 
 ![](https://dam-13749.kxcdn.com/wp-content/uploads/2017/01/simonetta-vespucci.jpg)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/733b8d33-26d3-4182-be30-388b8bc57737/deploy-status)](https://app.netlify.com/sites/tempera/deploys)
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/tempera.svg)](https://npmjs.org/package/tempera)
 [![Downloads/week](https://img.shields.io/npm/dw/tempera.svg)](https://npmjs.org/package/tempera)
@@ -101,10 +102,6 @@ USAGE
 
 # Contributing
 
----
-id: contributing
-title: Contributing
----
 🤠  Howdy, developer! Thanks for being willing to contribute!
 
 ## Project setup
