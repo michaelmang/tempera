@@ -19,7 +19,6 @@
 <p align="center">
   <a href="https://oclif.io"><img alt="Oclif" src="https://img.shields.io/badge/cli-oclif-brightgreen.svg"></a>
   <a href="https://app.netlify.com/sites/tempera/deploys"><img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/733b8d33-26d3-4182-be30-388b8bc57737/deploy-status"></a>
-  <a href="https://github.com/michaelmang/tempera/actions/workflows/publish.yml"><img alt="Actions Status" src="https://github.com/michaelmang/tempera/actions/workflows/publish.yml/badge.svg"></a>
   <a href="https://npmjs.org/package/tempera"><img alt="Version" src="https://img.shields.io/npm/v/tempera.svg"></a>
   <a href="https://npmjs.org/package/tempera"><img alt="Downloads" src="https://img.shields.io/npm/dw/tempera.svg"></a>
   <a href="https://github.com/michaelmang/tempera/blob/master/package.json"><img alt="Downloads" src="https://img.shields.io/npm/l/tempera.svg"></a>
