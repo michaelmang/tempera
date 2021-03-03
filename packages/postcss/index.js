@@ -1,3 +1,4 @@
+const { getMatcher, getType, types } = require("@tempera/css-types");
 const tinycolor = require("tinycolor2");
 
 const transforms = require("./transforms/common");
@@ -8,7 +9,6 @@ const {
   toRem,
   parseNumber,
 } = require("./utils");
-const { getMatcher, getType, types } = require("../css-types");
 
 module.exports = (options) => {
   const {
