@@ -38,6 +38,38 @@ DESCRIPTION
   and insights for adoption.
 ```
 
+#### Tokens
+Design tokens are key-value pairs that represent a specification (aka "spec") of a design system.
+
+If you are new to design tokens, [here's a good place to start](https://www.michaelmang.dev/blog/introduction-to-design-tokens).
+
+Tempera's `scorecard` command expects these tokens to be in the [javascript/es6 format which you can generate using Style Dictionary](https://amzn.github.io/style-dictionary/#/formats?id=javascriptes6).
+
+Example:
+
+```js
+export const ColorBackgroundBase = '#ffffff';
+export const ColorBackgroundAlt = '#fcfcfcfc';
+```
+
+The `scorecard` command expects the tokens to match against one of the following matchers after being transformed to kebab case:
+
+```js
+module.exports.BORDER_RADIUS = /border-radius/g;
+module.exports.BREAKPOINT = /max-width/g;
+module.exports.COLOR = /color/g;
+module.exports.DELAY = /delay/g;
+module.exports.DURATION = /duration/g;
+module.exports.FONT_FAMILY = /font-family/g;
+module.exports.FONT_SIZE = /font-size/g;
+module.exports.FONT_WEIGHT = /font-weight/g;
+module.exports.LINE_HEIGHT = /line-height/g;
+module.exports.SPACING = /margin|padding/g;
+module.exports.TIMING = /timing/g;
+```
+
+[You can learn more about the underlying `css-types` package that utilizes these matchers.](/docs/packages#css-types)
+
 #### Output
 
 <img alt="Screnshot" src={useBaseUrl('img/design-scorecard.png')} />

@@ -1,14 +1,29 @@
-# Tempera
+<h1 align="center">🖼️ Tempera 🖼️</h1>
 
-A CLI toolkit for aiding design tokens adoption. | [View Docs](https://tempera.netlify.app)
+<p align="center">
+  <a href="https://tempera.netlify.app">
+    <img alt="tempera" src="https://dam-13749.kxcdn.com/wp-content/uploads/2017/01/simonetta-vespucci.jpg" width="750">
+  </a>
+</p>
 
-![](https://dam-13749.kxcdn.com/wp-content/uploads/2017/01/simonetta-vespucci.jpg)
+<p align="center">
+  A CLI toolkit for aiding design tokens adoption.
+</p>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/733b8d33-26d3-4182-be30-388b8bc57737/deploy-status)](https://app.netlify.com/sites/tempera/deploys)
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/tempera.svg)](https://npmjs.org/package/tempera)
-[![Downloads/week](https://img.shields.io/npm/dw/tempera.svg)](https://npmjs.org/package/tempera)
-[![License](https://img.shields.io/npm/l/tempera.svg)](https://github.com/michaelmang/tempera/blob/master/package.json)
+<p align="center">
+  <a href="https://tempera.netlify.app">
+    View Docs
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://oclif.io"><img alt="Oclif" src="https://img.shields.io/badge/cli-oclif-brightgreen.svg"></a>
+  <a href="https://app.netlify.com/sites/tempera/deploys"><img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/733b8d33-26d3-4182-be30-388b8bc57737/deploy-status"></a>
+  <a href="https://github.com/michaelmang/tempera/actions/workflows/publish.yml"><img alt="Actions Status" src="https://github.com/michaelmang/tempera/actions/workflows/publish.yml/badge.svg"></a>
+  <a href="https://npmjs.org/package/tempera"><img alt="Version" src="https://img.shields.io/npm/v/tempera.svg"></a>
+  <a href="https://npmjs.org/package/tempera"><img alt="Downloads" src="https://img.shields.io/npm/dw/tempera.svg"></a>
+  <a href="https://github.com/michaelmang/tempera/blob/master/package.json"><img alt="Downloads" src="https://img.shields.io/npm/l/tempera.svg"></a>
+</p>
 
 <!-- toc -->
 
@@ -51,9 +66,41 @@ DESCRIPTION
   and insights for adoption.
 ```
 
+#### Tokens
+Design tokens are key-value pairs that represent a specification (aka "spec") of a design system.
+
+If you are new to design tokens, [here's a good place to start](https://www.michaelmang.dev/blog/introduction-to-design-tokens).
+
+Tempera's `scorecard` command expects these tokens to be in the [javascript/es6 format which you can generate using Style Dictionary](https://amzn.github.io/style-dictionary/#/formats?id=javascriptes6).
+
+Example:
+
+```js
+export const ColorBackgroundBase = '#ffffff';
+export const ColorBackgroundAlt = '#fcfcfcfc';
+```
+
+The `scorecard` command expects the tokens to match against one of the following matchers after being transformed to kebab case:
+
+```js
+module.exports.BORDER_RADIUS = /border-radius/g;
+module.exports.BREAKPOINT = /max-width/g;
+module.exports.COLOR = /color/g;
+module.exports.DELAY = /delay/g;
+module.exports.DURATION = /duration/g;
+module.exports.FONT_FAMILY = /font-family/g;
+module.exports.FONT_SIZE = /font-size/g;
+module.exports.FONT_WEIGHT = /font-weight/g;
+module.exports.LINE_HEIGHT = /line-height/g;
+module.exports.SPACING = /margin|padding/g;
+module.exports.TIMING = /timing/g;
+```
+
+[You can learn more about the underlying `css-types` package that utilizes these matchers.](/docs/packages#css-types)
+
 #### Output
 
-<img alt="Screnshot" src={useBaseUrl('img/design-scorecard.png')} />
+![design-scorecard](https://user-images.githubusercontent.com/22566333/109745214-88341d80-7ba1-11eb-9df3-89a947b36b1d.png)
 
 #### JSON Report
 
