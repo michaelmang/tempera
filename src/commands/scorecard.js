@@ -1,4 +1,6 @@
 const { Command, flags } = require("@oclif/command");
+const { types } = require("@tempera/css-types");
+const scorecard = require("@tempera/postcss-scorecard");
 const chalk = require("chalk");
 const CFonts = require("cfonts");
 const Pie = require("cli-pie");
@@ -17,8 +19,6 @@ const expandShorthand = require("postcss-shorthand-expand");
 const tinycolor = require("tinycolor2");
 
 const { validateSpecs } = require("../utils");
-const scorecard = require("../../packages/postcss");
-const { types } = require("../../packages/css-types");
 
 let invalidScores = [];
 let validScores = [];

@@ -1,0 +1,20 @@
+{
+  "npmClient": "yarn",
+  "command": {
+    "create": {
+      "homepage": "https://github.com/michaelmang/tempera",
+      "license": "MIT",
+      "author": "Mike Mangialardi",
+      "bugs": "https://github.com/michaelmang/tempera/issues",
+      "repository": "michaelmang/tempera"
+    }
+  },
+  "changelog": {
+    "repo": "michaelmang/tempera"
+  },
+  "packages": [
+    "packages/*",
+    "*.package.json"
+  ],
+  "version": "0.0.1"
+}
