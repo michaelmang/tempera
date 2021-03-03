@@ -1,14 +1,22 @@
 {
   "name": "@tempera/postcss-scorecard",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A postcss plugin for analyzing design system adoption.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelmang/tempera.git"
+  },
+  "homepage": "https://github.com/michaelmang/tempera",
   "main": "index.js",
   "scripts": {
     "format": "prettier --write ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "css",
+    "postcss"
+  ],
+  "author": "Mike Mangialardi",
+  "license": "MIT",
   "dependencies": {
     "nearest-color": "^0.4.4",
     "tinycolor2": "^1.4.2"
@@ -16,5 +24,8 @@
   "devDependencies": {
     "postcss": "^8.2.6",
     "prettier": "^2.2.1"
+  },
+  "bugs": {
+    "url": "https://github.com/michaelmang/tempera/issues"
   }
 }
