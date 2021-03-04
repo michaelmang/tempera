@@ -1,7 +1,7 @@
 {
   "name": "tempera",
   "description": "A CLI toolkit for aiding design tokens adoption.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Mike Mangialardi",
   "bin": {
     "tempera": "./bin/run"

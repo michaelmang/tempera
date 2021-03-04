@@ -1,6 +1,6 @@
 {
   "name": "@tempera/postcss-scorecard",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A postcss plugin for analyzing design system adoption.",
   "repository": {
     "type": "git",
