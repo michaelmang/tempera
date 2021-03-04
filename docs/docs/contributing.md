@@ -9,6 +9,7 @@ title: Contributing
 1.  Fork and clone the repo
 2.  Run `yarn install` to install dependencies
 3.  Create a branch for your PR with `git checkout -b pr/your-branch-name`
+4.  Run `.bin/run/ [COMMAND]` in the root of the repo to run commands locally
 
 > Tip: Keep your `master` branch pointing at the original repository and make
 > pull requests from branches on your fork. To do this, run:

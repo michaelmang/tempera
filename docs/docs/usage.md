@@ -17,6 +17,15 @@ $ yarn add global tempera
 
 ## Run Commands
 
+**Note:** This package is experimental. You may have better success by running the command locally:
+
+```sh-session
+USAGE
+  $ git clone https://github.com/michaelmang/tempera.git
+  $ yarn install
+  $ ./bin/run [COMMAND]
+```
+
 ### Scorecard
 
 Gather metrics around the adoption of a design system.
@@ -43,13 +52,15 @@ Design tokens are key-value pairs that represent a specification (aka "spec") of
 
 If you are new to design tokens, [here's a good place to start](https://www.michaelmang.dev/blog/introduction-to-design-tokens).
 
-Tempera's `scorecard` command expects these tokens to be in the [javascript/es6 format which you can generate using Style Dictionary](https://amzn.github.io/style-dictionary/#/formats?id=javascriptes6).
+Tempera's `scorecard` command expects these tokens to be in the [javascript/es6 format which you can generate using Style Dictionary](https://amzn.github.io/style-dictionary/#/formats?id=javascriptes6) except exported as CommonJS modules.
+
+Put it another way,it expects flat, CommonJS modules in PascalCase.
 
 Example:
 
 ```js
-export const ColorBackgroundBase = '#ffffff';
-export const ColorBackgroundAlt = '#fcfcfcfc';
+module.exports.ColorBackgroundBase = '#ffffff';
+module.exports.ColorBackgroundAlt = '#fcfcfcfc';
 ```
 
 The `scorecard` command expects the tokens to match against one of the following matchers after being transformed to kebab case:
