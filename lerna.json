@@ -13,8 +13,7 @@
     "repo": "michaelmang/tempera"
   },
   "packages": [
-    "packages/*",
-    "*.package.json"
+    "packages/*"
   ],
   "version": "0.0.2"
 }
