@@ -9,3 +9,4 @@ tokens.js
 .DS_Store
 
 docs/.docusaurus/
+build/

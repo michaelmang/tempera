@@ -1,0 +1,37 @@
+{
+  "name": "@tempera/stylelint-tokens",
+  "version": "0.0.3",
+  "description": "A StyleLint plugin for linting around adoption of design tokens.",
+  "keywords": [
+    "design-tokens",
+    "stylelint",
+    "postcss"
+  ],
+  "author": "Mike Mangialardi <mikemangialardi94@gmail.com>",
+  "homepage": "https://github.com/michaelmang/tempera",
+  "license": "MIT",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelmang/tempera.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michaelmang/tempera/issues"
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "clean": "rm -rf build",
+    "build": "npm run clean && babel src -d build -s",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.11.0"
+  },
+  "dependencies": {
+    "@tempera/postcss-scorecard": "^0.0.3"
+  }
+}

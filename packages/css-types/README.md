@@ -23,9 +23,8 @@ const {
   types,
   // Example: getType(postcssProperty)
   // Returns a common type fitting for the provided property
-  getType, 
+  getType,
 } = require("@tempera/css-types");
 ```
 
 [View the source](https://github.com/michaelmang/tempera/tree/master/packages/css-types)
-

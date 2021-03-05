@@ -12,8 +12,6 @@
   "changelog": {
     "repo": "michaelmang/tempera"
   },
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "version": "0.0.3"
 }

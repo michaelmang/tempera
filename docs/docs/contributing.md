@@ -2,7 +2,8 @@
 id: contributing
 title: Contributing
 ---
-🤠  Howdy, developer! Thanks for being willing to contribute!
+
+🤠 Howdy, developer! Thanks for being willing to contribute!
 
 ## Project setup
 
@@ -22,7 +23,7 @@ title: Contributing
 
 ## Committing and Pushing changes
 
-There are currently no tests but please document manual testing on PRs with your changes. 
+There are currently no tests but please document manual testing on PRs with your changes.
 
 ## Help needed
 

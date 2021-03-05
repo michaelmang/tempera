@@ -1,4 +1,4 @@
-<h1 align="center">🖼️ Tempera 🖼️</h1>
+<h1 align="center">Tempera</h1>
 
 <p align="center">
   <a href="https://tempera.netlify.app">
@@ -59,7 +59,7 @@ Gather metrics around the adoption of a design system.
 
 ```sh-session
 USAGE
-  $ tempera scorecard -s https://www.figma.com/developers -t ./tokens.js 
+  $ tempera scorecard -s https://www.figma.com/developers -t ./tokens.js
 
 OPTIONS
   -s, --site=site  site url to analyze
@@ -75,6 +75,7 @@ DESCRIPTION
 ```
 
 #### Tokens
+
 Design tokens are key-value pairs that represent a specification (aka "spec") of a design system.
 
 If you are new to design tokens, [here's a good place to start](https://www.michaelmang.dev/blog/introduction-to-design-tokens).
@@ -86,8 +87,8 @@ Put it another way, it expects flat, CommonJS modules in PascalCase.
 Example:
 
 ```js
-module.exports.ColorBackgroundBase = '#ffffff';
-module.exports.ColorBackgroundAlt = '#fcfcfcfc';
+module.exports.ColorBackgroundBase = "#ffffff";
+module.exports.ColorBackgroundAlt = "#fcfcfcfc";
 ```
 
 The `scorecard` command expects the tokens to match against one of the following matchers after being transformed to kebab case:
@@ -149,6 +150,7 @@ USAGE
 ```
 
 ### Help
+
 ```sh-session
 $ tempera --help [COMMAND]
 USAGE
@@ -159,7 +161,7 @@ USAGE
 
 # Contributing
 
-🤠  Howdy, developer! Thanks for being willing to contribute!
+🤠 Howdy, developer! Thanks for being willing to contribute!
 
 ## Project setup
 
@@ -179,7 +181,7 @@ USAGE
 
 ## Committing and Pushing changes
 
-There are currently no tests but please document manual testing on PRs with your changes. 
+There are currently no tests but please document manual testing on PRs with your changes.
 
 ## Help needed
 
@@ -192,23 +194,58 @@ requests! Thanks!
 
 # Packages
 
+## Tools
+
+In addition to a CLI, Tempera offers other tools to improve design tokens adoption.
+
+### stylelint-tokens
+
+A Stylelint plugin that helps avoid the adoption of unofficial design specifications.
+
+#### Installation
+
+```bash
+yarn add @tempera/stylelint-tokens
+```
+
+#### Usage
+
+Install [Stylelint](https://stylelint.io/user-guide/get-started) and update your configuration file to utilize the plugin.
+
+```js
+// stylelint.config.js
+const tokens = require("./fixtures/example-tokens");
+
+module.exports = {
+  // ...
+  plugins: ["@tempera/stylelint-tokens"],
+  rules: {
+    "@tempera/official-specs": tokens,
+  },
+};
+```
+
+[View the source](https://github.com/michaelmang/tempera/tree/master/packages/stylelint)
+
+## Supporting Packages
+
 The underlying packages that support Tempera are publicly accessible.
 
 You are welcome and encouraged to use these packages directly should you need a custom solution.
 
 🚀 [Contributing](/docs/contributing) to these packages is also welcome.
 
-## css-types
+### css-types
 
 Utilities to categorize your CSS.
 
-### Installation
+#### Installation
 
 ```bash
 yarn add @tempera/css-types
 ```
 
-### Usage
+#### Usage
 
 ```js
 const {
@@ -223,32 +260,68 @@ const {
   types,
   // Example: getType(postcssProperty)
   // Returns a common type fitting for the provided property
-  getType, 
+  getType,
 } = require("@tempera/css-types");
 ```
 
 [View the source](https://github.com/michaelmang/tempera/tree/master/packages/css-types)
 
-## postcss-scorecard
+### postcss-scorecard
 
 A PostCSS plugin that exposes hooks into design token adoption validation.
 
-### Installation
+#### Installation
 
 ```bash
 yarn add @tempera/postcss-scorecard
 ```
 
-### Usage
+#### Usage
 
 ```js
 const pxToRem = require("postcss-pxtorem");
 const expandShorthand = require("postcss-shorthand-expand");
 
 await postcss()
+  .use(pxToRem())
+  .use(expandShorthand)
   .use(
-    pxToRem()
+    scorecard({
+      onInvalid: (score) => {
+        // do something when CSS property is not an official spec
+      },
+      onValid: (score) => {
+        // do something when CSS property is an official spec
+      },
+      onFinished: () => {
+        // do something after validation finishes
+      },
+      specs, // the official design tokens
+    })
   )
+  .process(css, { from: undefined });
+```
+
+[View the source](https://github.com/michaelmang/tempera/tree/master/packages/postcss)
+
+### postcss-scorecard
+
+A PostCSS plugin that exposes hooks into design token adoption validation.
+
+#### Installation
+
+```bash
+yarn add @tempera/postcss-scorecard
+```
+
+#### Usage
+
+```js
+const pxToRem = require("postcss-pxtorem");
+const expandShorthand = require("postcss-shorthand-expand");
+
+await postcss()
+  .use(pxToRem())
   .use(expandShorthand)
   .use(
     scorecard({

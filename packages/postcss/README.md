@@ -15,9 +15,7 @@ const pxToRem = require("postcss-pxtorem");
 const expandShorthand = require("postcss-shorthand-expand");
 
 await postcss()
-  .use(
-    pxToRem()
-  )
+  .use(pxToRem())
   .use(expandShorthand)
   .use(
     scorecard({

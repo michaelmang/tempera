@@ -1,52 +1,52 @@
 module.exports = {
-  title: 'Tempera',
-  tagline: 'A CLI toolkit for aiding design tokens adoption.',
-  url: 'https://tempera.netlify.app',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'michaelmang',
-  projectName: 'tempera',
+  title: "Tempera",
+  tagline: "A CLI toolkit for aiding design tokens adoption.",
+  url: "https://tempera.netlify.app",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "michaelmang",
+  projectName: "tempera",
   themeConfig: {
     navbar: {
-      title: 'Tempera',
+      title: "Tempera",
       logo: {
-        alt: 'Tempera',
-        src: 'img/simonetta-vespucci.png',
+        alt: "Tempera",
+        src: "img/simonetta-vespucci.png",
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
+          to: "docs/",
+          activeBasePath: "docs",
+          label: "Docs",
+          position: "left",
         },
         {
-          href: 'https://github.com/michaelmang/tempera',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/michaelmang/tempera",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Usage',
-              to: 'docs/',
+              label: "Usage",
+              to: "docs/",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/michaelmang/tempera',
+              label: "GitHub",
+              href: "https://github.com/michaelmang/tempera",
             },
           ],
         },
@@ -56,15 +56,14 @@ module.exports = {
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/michaelmang/tempera/edit/master/docs/',
+          sidebarPath: require.resolve("./sidebars.js"),
+          editUrl: "https://github.com/michaelmang/tempera/edit/master/docs/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],

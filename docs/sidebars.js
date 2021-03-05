@@ -1,5 +1,5 @@
 module.exports = {
   someSidebar: {
-    Tempera: ['usage', 'contributing', 'packages'],
+    Tempera: ["usage", "contributing", "packages"],
   },
 };

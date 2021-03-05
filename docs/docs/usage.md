@@ -4,6 +4,7 @@ title: Usage
 sidebar_label: Usage
 slug: /
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <!-- usage -->
@@ -32,7 +33,7 @@ Gather metrics around the adoption of a design system.
 
 ```sh-session
 USAGE
-  $ tempera scorecard -s https://www.figma.com/developers -t ./tokens.js 
+  $ tempera scorecard -s https://www.figma.com/developers -t ./tokens.js
 
 OPTIONS
   -s, --site=site  site url to analyze
@@ -48,6 +49,7 @@ DESCRIPTION
 ```
 
 #### Tokens
+
 Design tokens are key-value pairs that represent a specification (aka "spec") of a design system.
 
 If you are new to design tokens, [here's a good place to start](https://www.michaelmang.dev/blog/introduction-to-design-tokens).
@@ -59,8 +61,8 @@ Put it another way,it expects flat, CommonJS modules in PascalCase.
 Example:
 
 ```js
-module.exports.ColorBackgroundBase = '#ffffff';
-module.exports.ColorBackgroundAlt = '#fcfcfcfc';
+module.exports.ColorBackgroundBase = "#ffffff";
+module.exports.ColorBackgroundAlt = "#fcfcfcfc";
 ```
 
 The `scorecard` command expects the tokens to match against one of the following matchers after being transformed to kebab case:
@@ -122,6 +124,7 @@ USAGE
 ```
 
 ### Help
+
 ```sh-session
 $ tempera --help [COMMAND]
 USAGE
