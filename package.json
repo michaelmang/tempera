@@ -1,7 +1,7 @@
 {
   "name": "tempera",
   "description": "A CLI toolkit for aiding design tokens adoption.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Mike Mangialardi",
   "bin": {
     "tempera": "./bin/run"
@@ -11,8 +11,8 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
-    "@tempera/css-types": "^0.1.1",
-    "@tempera/postcss-scorecard": "^0.1.1",
+    "@tempera/css-types": "^0.1.2",
+    "@tempera/postcss-scorecard": "^0.1.2",
     "cfonts": "^2.9.1",
     "chalk": "^4.1.0",
     "cli-pie": "^2.4.2",
@@ -67,5 +67,6 @@
     "prepack": "oclif-dev manifest",
     "test": "echo NO TESTS",
     "format": "prettier --write ."
-  }
+  },
+  "gitHead": "2f0f89563ed1e0eea61065eb589802693e643dff"
 }

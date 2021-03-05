@@ -1,6 +1,6 @@
 {
   "name": "@tempera/postcss-scorecard",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A postcss plugin for analyzing design system adoption.",
   "repository": {
     "type": "git",
@@ -28,5 +28,5 @@
   "bugs": {
     "url": "https://github.com/michaelmang/tempera/issues"
   },
-  "gitHead": "82e531f82432125a2c779683130d13706a990abf"
+  "gitHead": "2f0f89563ed1e0eea61065eb589802693e643dff"
 }
