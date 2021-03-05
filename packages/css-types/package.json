@@ -1,6 +1,6 @@
 {
   "name": "@tempera/css-types",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A utility for matching CSS properties by type.",
   "repository": "michaelmang/tempera",
   "homepage": "https://github.com/michaelmang/tempera",
@@ -15,5 +15,6 @@
   "license": "MIT",
   "dependencies": {
     "prettier": "^2.2.1"
-  }
+  },
+  "gitHead": "82e531f82432125a2c779683130d13706a990abf"
 }

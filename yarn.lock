@@ -1020,17 +1020,17 @@
   dependencies:
     "@octokit/openapi-types" "^5.2.2"
 
-"@tempera/css-types@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@tempera/css-types/-/css-types-0.0.3.tgz#58ac4feee26d31b43c326f082a1cb942dc71ac6e"
-  integrity sha512-FSvvy3mjzLT+csJ99jRzk5tbw3Ch8v6Zh4UEOOA4BPdjv0MctHt1zxdBWh9c/XEKWr0k2gL9lnEFa6ssxCUttA==
+"@tempera/css-types@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@tempera/css-types/-/css-types-0.1.1.tgz#b6d10a26cd1716eb2972de6931f4f4ac912f2385"
+  integrity sha512-22F+mFHxxki7l8uhvr+dGSxlfGM9UjWWFh8vFL1KYS4e2fE6o6NsPJTAEAojEY9T3c+BWLOhW1UEZQL72bkmGQ==
   dependencies:
     prettier "^2.2.1"
 
-"@tempera/postcss-scorecard@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@tempera/postcss-scorecard/-/postcss-scorecard-0.0.3.tgz#17da2c0906d48f9d2b436aa3c8e50a56354571bf"
-  integrity sha512-rRtQewCnKh82OALfWtqXhFY9vFIdKIwvzTv0eeq66qLCbSeaehPc5fD5ExxBhuYGvjHEM1pDSbQqi6+kN39z1Q==
+"@tempera/postcss-scorecard@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@tempera/postcss-scorecard/-/postcss-scorecard-0.1.1.tgz#e098f73aa81cf3aefdfa9d5d42a95e2083aa022f"
+  integrity sha512-2hEX2x6cHN40TOb8FyYnH/0ptAfV1RhswciMcde94ANSCWUbQj0depaPvMmiOCirCOjYuAbnG/QDfcd3/EzA4A==
   dependencies:
     nearest-color "^0.4.4"
     tinycolor2 "^1.4.2"
