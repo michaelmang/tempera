@@ -82,7 +82,7 @@ If you are new to design tokens, [here's a good place to start](https://www.mich
 
 Tempera's `scorecard` command expects these tokens to be in the [javascript/es6 format which you can generate using Style Dictionary](https://amzn.github.io/style-dictionary/#/formats?id=javascriptes6) except exported as CommonJS modules.
 
-Put it another way, it expects flat, CommonJS modules in PascalCase.
+In other words, flat CommonJS modules in PascalCase are expected.
 
 Example:
 
@@ -90,6 +90,8 @@ Example:
 module.exports.ColorBackgroundBase = "#ffffff";
 module.exports.ColorBackgroundAlt = "#fcfcfcfc";
 ```
+
+Support for tokens in ES6 format is on the roadmap.
 
 The `scorecard` command expects the tokens to match against one of the following matchers after being transformed to kebab case:
 
@@ -224,6 +226,20 @@ module.exports = {
   },
 };
 ```
+
+##### Tokens
+The plugin expects these tokens to be in the [javascript/es6 format which you can generate using Style Dictionary](https://amzn.github.io/style-dictionary/#/formats?id=javascriptes6) except exported as CommonJS modules.
+
+In other words, flat CommonJS modules in PascalCase are expected.
+
+Example:
+
+```js
+module.exports.ColorBackgroundBase = "#ffffff";
+module.exports.ColorBackgroundAlt = "#fcfcfcfc";
+```
+
+Support for tokens in ES6 format is on the roadmap.
 
 [View the source](https://github.com/michaelmang/tempera/tree/master/packages/stylelint)
 
