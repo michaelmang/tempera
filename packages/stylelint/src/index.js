@@ -1,8 +1,8 @@
-import { createPlugin } from 'stylelint';
+import { createPlugin } from "stylelint";
 
-import rules from './rules';
-import { namespace } from './utils';
+import rules from "./rules";
+import { namespace } from "./utils";
 
 export default Object.keys(rules).map((ruleName) => {
-	return createPlugin(namespace(ruleName), rules[ruleName]);
+  return createPlugin(namespace(ruleName), rules[ruleName]);
 });

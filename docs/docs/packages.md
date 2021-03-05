@@ -32,7 +32,6 @@ module.exports = {
     "@tempera/official-specs": tokens,
   },
 };
-
 ```
 
 [View the source](https://github.com/michaelmang/tempera/tree/master/packages/stylelint)
@@ -70,7 +69,7 @@ const {
   types,
   // Example: getType(postcssProperty)
   // Returns a common type fitting for the provided property
-  getType, 
+  getType,
 } = require("@tempera/css-types");
 ```
 
@@ -93,9 +92,7 @@ const pxToRem = require("postcss-pxtorem");
 const expandShorthand = require("postcss-shorthand-expand");
 
 await postcss()
-  .use(
-    pxToRem()
-  )
+  .use(pxToRem())
   .use(expandShorthand)
   .use(
     scorecard({
@@ -133,9 +130,7 @@ const pxToRem = require("postcss-pxtorem");
 const expandShorthand = require("postcss-shorthand-expand");
 
 await postcss()
-  .use(
-    pxToRem()
-  )
+  .use(pxToRem())
   .use(expandShorthand)
   .use(
     scorecard({
