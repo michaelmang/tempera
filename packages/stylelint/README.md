@@ -39,4 +39,4 @@ module.exports.ColorBackgroundAlt = "#fcfcfcfc";
 
 Support for tokens in ES6 format is on the roadmap.
 
-[View the source](https://github.com/michaelmang/tempera/tree/master/packages/stylelint))
+[View the source](https://github.com/michaelmang/tempera/tree/master/packages/stylelint)
