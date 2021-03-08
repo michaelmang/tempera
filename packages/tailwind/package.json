@@ -9,7 +9,8 @@
   "scripts": {
     "prepublish": "npm run build",
     "clean": "rm -rf build",
-    "build": "npm run clean && babel src -d build -s",
+    "build": "npm run clean && babel src stubs -d build -s",
+    "copy": "vendor-copy",
     "format": "prettier --write ."
   },
   "author": "Mike Mangialardi <mikemangialardi94@gmail.com>",
@@ -32,6 +33,14 @@
     "@babel/preset-env": "^7.13.9"
   },
   "devDependencies": {
-    "prettier": "^2.2.1"
-  }
+    "prettier": "^2.2.1",
+    "tailwindcss": "^2.0.3",
+    "vendor-copy": "^2.0.0"
+  },
+  "vendorCopy": [
+    {
+      "from": "node_modules/tailwindcss/stubs/defaultConfig.stub.js",
+      "to": "stubs/default-tailwind-config.js"
+    }
+  ]
 }
