@@ -9,7 +9,8 @@
   "scripts": {
     "prepublish": "npm run build",
     "clean": "rm -rf build",
-    "build": "npm run clean && babel src -d build -s"
+    "build": "npm run clean && babel src -d build -s",
+    "format": "prettier --write ."
   },
   "author": "Mike Mangialardi <mikemangialardi94@gmail.com>",
   "license": "MIT",
@@ -29,5 +30,8 @@
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.8",
     "@babel/preset-env": "^7.13.9"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
   }
 }
