@@ -27,12 +27,26 @@
     "@babel/core": "^7.13.10",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.13.8",
     "@babel/preset-env": "^7.13.10",
-    "prettier": "^2.2.1"
+    "lodash.startcase": "^4.4.0",
+    "prettier": "^2.2.1",
+    "tailwindcss": "^2.0.3",
+    "vendor-copy": "^2.0.0"
   },
   "scripts": {
     "prepublish": "npm run build",
     "clean": "rm -rf build",
     "build": "npm run clean && babel src -d build -s",
-    "format": "prettier --write ."
-  }
+    "format": "prettier --write .",
+    "copy:plugins": "vendor-copy && rm -rf stubs/tailwindcss/plugins/css",
+    "map:plugins-classNames": "babel-node scripts/get-plugin-class-name-mapping.js"
+  },
+  "dependencies": {
+    "lodash.kebabcase": "^4.1.1"
+  },
+  "vendorCopy": [
+    {
+      "from": "node_modules/tailwindcss/lib/plugins",
+      "to": "stubs/tailwindcss/plugins"
+    }
+  ]
 }
