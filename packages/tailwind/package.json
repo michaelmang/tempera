@@ -30,7 +30,9 @@
   "dependencies": {
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.8",
-    "@babel/preset-env": "^7.13.9"
+    "@babel/preset-env": "^7.13.9",
+    "lodash.kebabcase": "^4.1.1",
+    "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
     "prettier": "^2.2.1",
