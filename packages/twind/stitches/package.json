@@ -1,0 +1,25 @@
+{
+  "name": "@tempera/stitches",
+  "version": "0.1.2",
+  "description": "An API that generates twind/style instances from  a set of design tokens.",
+  "main": "build/index.js",
+  "files": [
+    "build"
+  ],
+  "author": "Mike Mangialardi <mikemangialardi94@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelmang/tempera.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michaelmang/tempera/issues"
+  },
+  "keywords": [
+    "design-tokens",
+    "twind",
+    "twind-style",
+    "stitches"
+  ],
+  "homepage": "https://github.com/michaelmang/tempera"
+}
