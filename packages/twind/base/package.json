@@ -31,5 +31,8 @@
     "clean": "rm -rf build",
     "build": "npm run clean && babel src -d build -s",
     "format": "prettier --write ."
+  },
+  "dependencies": {
+    "twind": "^0.15.10"
   }
 }
