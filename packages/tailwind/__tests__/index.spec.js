@@ -1,7 +1,7 @@
 import getTailwindConfig from "../src";
 
 describe("getTailwindConfig", () => {
-  it('matches the saved snapshot', () => {
+  it("matches the saved snapshot", () => {
     const tokens = {
       ColorPrimaryLighter: "yellow",
       ColorPrimaryDefault: "blue",
@@ -10,9 +10,9 @@ describe("getTailwindConfig", () => {
 
     expect(getTailwindConfig(tokens)).toMatchSnapshot();
   });
-  
+
   describe("invalid tokens", () => {
-    it('matches the saved snapshot', () => {
+    it("matches the saved snapshot", () => {
       const tokens = {
         color: {
           ColorPrimaryLighter: "yellow",
@@ -24,13 +24,12 @@ describe("getTailwindConfig", () => {
       let exception;
 
       try {
-        getTailwindConfig(tokens)
-      }
-      catch (error) {
+        getTailwindConfig(tokens);
+      } catch (error) {
         exception = error;
       }
 
       expect(exception).toMatchSnapshot();
     });
-  }); 
-}); 
+  });
+});
