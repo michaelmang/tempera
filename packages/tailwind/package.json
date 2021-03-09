@@ -1,5 +1,5 @@
 {
-  "name": "@tempera/tailwind",
+  "name": "@tempera/tailwind-config",
   "version": "0.1.2",
   "description": "An API that generates a Tailwind configuration from a set of design tokens.",
   "main": "build/index.js",
