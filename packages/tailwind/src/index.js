@@ -43,5 +43,5 @@ export default function getConfig(tokens) {
     };
   });
 
-  return merge(defaultConfig, result);
+  return merge(defaultConfig, { theme: result });
 }
