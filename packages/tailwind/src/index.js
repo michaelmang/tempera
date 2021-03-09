@@ -16,9 +16,11 @@ export default function getConfig(tokens) {
     if (!matcherKey) {
       return null;
     }
-
+    
+    const matchBeginningHyphen = /^-(?=\w)/gm;
+    const matchEndingHyphen = /-(?!\w)/gm;
     const configKey = kebabCase(matcherKey);
-    const className = kebabCase(tokenKey).replace(matcherValue, "");
+    const className = kebabCase(tokenKey).replace(matcherValue, "").replace(matchEndingHyphen, "").replace(matchBeginningHyphen, "");
 
     result = {
       ...result,

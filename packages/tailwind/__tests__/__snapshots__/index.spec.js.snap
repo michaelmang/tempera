@@ -3,9 +3,9 @@
 exports[`getTailwindConfig matches the saved snapshot 1`] = `
 Object {
   "colors": Object {
-    "-primary-darker": "red",
-    "-primary-default": "blue",
-    "-primary-lighter": "yellow",
+    "primary-darker": "red",
+    "primary-default": "blue",
+    "primary-lighter": "yellow",
   },
   "darkMode": false,
   "plugins": Array [],
