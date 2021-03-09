@@ -13,7 +13,7 @@ export default function getConfig(tokens) {
       return match && match.length;
     });
 
-    if (!matcher) {
+    if (!matcherKey) {
       return null;
     }
 

@@ -11,7 +11,8 @@
     "clean": "rm -rf build",
     "build": "npm run clean && babel src stubs -d build -s",
     "copy": "vendor-copy",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test": "jest"
   },
   "author": "Mike Mangialardi <mikemangialardi94@gmail.com>",
   "license": "MIT",
@@ -29,12 +30,14 @@
   "homepage": "https://github.com/michaelmang/tempera",
   "dependencies": {
     "@babel/cli": "^7.13.0",
-    "@babel/core": "^7.13.8",
-    "@babel/preset-env": "^7.13.9",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
     "lodash.kebabcase": "^4.1.1",
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3",
     "prettier": "^2.2.1",
     "tailwindcss": "^2.0.3",
     "vendor-copy": "^2.0.0"
