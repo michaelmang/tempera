@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`getTailwindConfig invalid tokens matches the saved snapshot 1`] = `[Error: Tokens are not in a valid format. A flat set of key-value modules is expected.]`;
+
 exports[`getTailwindConfig matches the saved snapshot 1`] = `
 Object {
   "colors": Object {
