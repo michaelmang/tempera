@@ -4,11 +4,6 @@ exports[`getTailwindConfig invalid tokens matches the saved snapshot 1`] = `[Err
 
 exports[`getTailwindConfig matches the saved snapshot 1`] = `
 Object {
-  "colors": Object {
-    "primary-darker": "red",
-    "primary-default": "blue",
-    "primary-lighter": "yellow",
-  },
   "darkMode": false,
   "plugins": Array [],
   "presets": Array [],
@@ -143,6 +138,9 @@ Object {
         "800": "#9d174d",
         "900": "#831843",
       },
+      "primary-darker": "red",
+      "primary-default": "blue",
+      "primary-lighter": "yellow",
       "purple": Object {
         "100": "#ede9fe",
         "200": "#ddd6fe",
@@ -215,8 +213,8 @@ Object {
     },
     "fontFamily": Object {
       "mono": Array [
-        "ui-monospace",
-        "SFMono-Regular",
+        "Roboto Mono",
+        "monospace",
         "Menlo",
         "Monaco",
         "Consolas",
@@ -310,10 +308,28 @@ Object {
           "lineHeight": "1.75rem",
         },
       ],
+      "medium": Array [
+        "1rem",
+        Object {
+          "lineHeight": "1.5rem",
+        },
+      ],
       "sm": Array [
         "0.875rem",
         Object {
           "lineHeight": "1.25rem",
+        },
+      ],
+      "small": Array [
+        "0.875rem",
+        Object {
+          "lineHeight": "1.25rem",
+        },
+      ],
+      "tiny": Array [
+        "0.75rem",
+        Object {
+          "lineHeight": "1rem",
         },
       ],
       "xl": Array [
@@ -1220,3 +1236,5 @@ Object {
   },
 }
 `;
+
+exports[`getTailwindConfig missing line height tokens tokens matches the saved snapshot 1`] = `[Error: Could not find matching line height for font size. Did you include your line height tokens?]`;

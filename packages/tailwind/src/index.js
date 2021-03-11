@@ -1,3 +1,4 @@
+import camelCase from "lodash.camelcase";
 import kebabCase from "lodash.kebabcase";
 import merge from "lodash.merge";
 
@@ -15,7 +16,11 @@ export default function getConfig(tokens) {
   let result = {};
 
   Object.entries(tokens).forEach(([tokenKey, tokenValue]) => {
-    if (tokenKey.toLowerCase().includes("component")) {
+    if (kebabCase(tokenKey).includes("component")) {
+      return null;
+    }
+
+    if (kebabCase(tokenKey).includes("line-height")) {
       return null;
     }
 
@@ -30,7 +35,7 @@ export default function getConfig(tokens) {
       return null;
     }
 
-    const configKey = kebabCase(matcherKey);
+    const configKey = camelCase(matcherKey);
     const matchBeginningHyphen = /^-(?=\w)/gm;
     const matchEndingHyphen = /-(?!\w)/gm;
     const className = kebabCase(tokenKey)
@@ -38,11 +43,35 @@ export default function getConfig(tokens) {
       .replace(matchEndingHyphen, "")
       .replace(matchBeginningHyphen, "");
 
+    let setting;
+
+    if (configKey === "fontSize") {
+      const fontSizeIndex = Object.entries(tokens)
+        .filter(([key]) => camelCase(key).includes("fontSize"))
+        .findIndex(([_, value]) => {
+          return value === tokenValue;
+        });
+      
+      try {
+        const lineHeight = Object.entries(tokens).filter(
+          ([key]) => camelCase(key).includes("lineHeight")
+        )[fontSizeIndex][1];
+        setting = [tokenValue, { lineHeight }];
+      }
+      catch (exception) {
+        throw new Error("Could not find matching line height for font size. Did you include your line height tokens?");
+      }
+    } else if (configKey === "fontFamily") {
+      setting = tokenValue.split(",").map(x => x.trimStart());
+    } else {
+      setting = tokenValue;
+    }
+
     result = {
       ...result,
       [configKey]: {
         ...result[configKey],
-        [className]: tokenValue,
+        [className]: setting,
       },
     };
   });
