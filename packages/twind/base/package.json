@@ -19,5 +19,15 @@
     "design-tokens",
     "twind"
   ],
-  "homepage": "https://github.com/michaelmang/tempera"
+  "homepage": "https://github.com/michaelmang/tempera",
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10"
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "clean": "rm -rf build",
+    "build": "npm run clean && babel src -d build -s"
+  }
 }
