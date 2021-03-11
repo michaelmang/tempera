@@ -1,16 +1,11 @@
+import getTailwindConfig from "@tempera/tailwind-config";
 import kebabCase from "lodash.kebabcase";
 import merge from "lodash.merge";
 
 import * as types from "./types";
 import { getType, getClassName } from "./utils";
 
-// replace with npm package
-import getTwind from "../../base";
-import getTailwindConfig from "../../../tailwind";
-
-export default function getStitches(tokens = defaultTokens) {
-  const { style: twStyle } = getTwind(tokens);
-
+export default function getStitches(tokens) {
   const tailwindConfig = getTailwindConfig(tokens);
   const sizes = Object.keys(tailwindConfig.theme.fontSize);
 
@@ -87,6 +82,7 @@ export default function getStitches(tokens = defaultTokens) {
           },
         },
       });
+
     } else {
       const property = keyList.slice(variantIndex + 1).join("-");
       const className = getClassName(
@@ -108,7 +104,7 @@ export default function getStitches(tokens = defaultTokens) {
 
     result = {
       ...result,
-      [component]: twStyle(merge(result[component], style)),
+      [component]: merge(result[component], style),
     };
   });
 

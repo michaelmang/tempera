@@ -1,6 +1,6 @@
 {
   "name": "@tempera/tailwind-config",
-  "version": "0.1.2",
+  "version": "0.2.0-5",
   "description": "An API that generates a Tailwind configuration from a set of design tokens.",
   "main": "build/index.js",
   "files": [
@@ -9,7 +9,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "clean": "rm -rf build",
-    "build": "npm run clean && babel src stubs -d build -s",
+    "build": "npm run clean && babel src -d build -s",
     "copy": "vendor-copy",
     "format": "prettier --write .",
     "test": "jest"
@@ -32,6 +32,7 @@
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
+    "@tempera/tailwind-config": "^0.2.0-5",
     "lodash.camelcase": "^4.3.0",
     "lodash.kebabcase": "^4.1.1",
     "lodash.merge": "^4.6.2",
@@ -47,11 +48,11 @@
   "vendorCopy": [
     {
       "from": "node_modules/tailwindcss/stubs/defaultConfig.stub.js",
-      "to": "stubs/default-tailwind-config.js"
+      "to": "src/stubs/default-tailwind-config.js"
     },
     {
       "from": "node_modules/tailwindcss/colors.js",
-      "to": "colors.js"
+      "to": "src/colors.js"
     }
   ]
 }

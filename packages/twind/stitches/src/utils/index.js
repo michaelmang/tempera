@@ -1,17 +1,17 @@
 import camelCase from "lodash.camelcase";
 
+import * as nameClasses from "../stubs/plugin-class-name-mapping";
 import * as types from "../types";
-import * as nameClasses from "../../stubs/plugin-class-name-mapping";
 
 export function getClassName(property, value, theme) {
   const plugin = camelCase(property);
 
   const [_, tokens] =
     Object.entries(theme).find(([category]) => {
-      if (plugin.includes("color")) {
+      if (plugin.toLowerCase().includes("color")) {
         return category === "colors";
       }
-
+      
       return category === plugin;
     }) || [];
 

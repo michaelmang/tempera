@@ -1,7 +1,7 @@
 {
   "name": "@tempera/stitches",
-  "version": "0.1.2",
-  "description": "An API that generates twind/style instances from  a set of design tokens.",
+  "version": "0.2.0-12",
+  "description": "An API that generates twind/style shapes from  a set of design tokens.",
   "main": "build/index.js",
   "files": [
     "build"
@@ -38,11 +38,12 @@
     "clean": "rm -rf build",
     "build": "npm run clean && babel src -d build -s",
     "format": "prettier --write .",
-    "copy:plugins": "vendor-copy && rm -rf stubs/tailwindcss/plugins/css",
-    "map:plugins-classNames": "babel-node scripts/get-plugin-class-name-mapping.js",
+    "copy:plugins": "vendor-copy && rm -rf src/stubs/tailwindcss/plugins/css",
+    "map:plugins-classNames": "rm -rf src/stubs/plugin-class-name-mapping.js && babel-node scripts/get-plugin-class-name-mapping.js",
     "test": "jest"
   },
   "dependencies": {
+    "@tempera/tailwind-config": "^0.2.0-5",
     "lodash.camelcase": "^4.3.0",
     "lodash.kebabcase": "^4.1.1",
     "lodash.merge": "^4.6.2"
@@ -50,7 +51,7 @@
   "vendorCopy": [
     {
       "from": "node_modules/tailwindcss/lib/plugins",
-      "to": "stubs/tailwindcss/plugins"
+      "to": "src/stubs/tailwindcss/plugins"
     }
   ]
 }

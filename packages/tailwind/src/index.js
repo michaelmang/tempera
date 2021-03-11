@@ -5,7 +5,7 @@ import mergeWith from "lodash.mergewith";
 
 import * as matchers from "./matchers";
 import { validateTokens } from "./utils";
-import defaultConfig from "../stubs/default-tailwind-config";
+import defaultConfig from "./stubs/default-tailwind-config";
 
 export default function getConfig(tokens, { extend = false } = {}) {
   if (!validateTokens(tokens)) {

@@ -2,7 +2,16 @@
 
 exports[`getStitches matches the saved snapshot 1`] = `
 Object {
-  "button": "tw-1wf07sv tw-i4o43m tw-4g0tm4 tw-bf28dl tw-1s8v1gm tw-fupgjj",
-  "input": "tw-1wf07sv tw-i4o43m tw-4g0tm4 tw-bf28dl tw-1s8v1gm tw-fupgjj",
+  "button": Object {
+    "base": "text-medium text-primary",
+    "variants": Object {
+      "size": Object {
+        "small": "text-tiny",
+      },
+      "variant": Object {
+        "secondary": "bg-primary text-white text-small hover:text-tiny",
+      },
+    },
+  },
 }
 `;

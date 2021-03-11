@@ -2,7 +2,7 @@ import fs from "fs";
 import startCase from "lodash.startcase";
 import path from "path";
 
-const PLUGINS_DIR = "./stubs/tailwindcss/plugins";
+const PLUGINS_DIR = "./src/stubs/tailwindcss/plugins";
 
 function main() {
   let result = {};
@@ -28,7 +28,7 @@ function main() {
     }
 
     fs.appendFileSync(
-      path.relative(process.cwd(), "./stubs/plugin-class-name-mapping.js"),
+      path.relative(process.cwd(), "./src/stubs/plugin-class-name-mapping.js"),
       `export const ${pluginName} = "${className[0].replace(/'/g, "")}";\n`
     );
   });

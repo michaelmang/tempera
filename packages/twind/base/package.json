@@ -1,6 +1,6 @@
 {
   "name": "@tempera/twind",
-  "version": "0.1.2",
+  "version": "0.2.0-7",
   "description": "An API that generates a twind instance from a set of design tokens.",
   "main": "build/index.js",
   "files": [
@@ -33,6 +33,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@tempera/tailwind-config": "^0.2.0-5",
     "twind": "^0.15.10"
   }
 }
