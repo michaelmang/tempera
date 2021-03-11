@@ -7,17 +7,19 @@ const PLUGINS_DIR = "./stubs/tailwindcss/plugins";
 function main() {
   let result = {};
 
-  fs.readdirSync(path.relative(process.cwd(), PLUGINS_DIR)).forEach(file => {
+  fs.readdirSync(path.relative(process.cwd(), PLUGINS_DIR)).forEach((file) => {
     const filePath = path.relative(process.cwd(), `${PLUGINS_DIR}/${file}`);
-    const contents = fs.readFileSync(filePath, 'utf-8');
+    const contents = fs.readFileSync(filePath, "utf-8");
 
-    const hasNameClass = contents.match("nameClass"); 
+    const hasNameClass = contents.match("nameClass");
     if (!hasNameClass) {
       return null;
     }
 
     const plugin = path.parse(file).name;
-    const pluginName = startCase(plugin === "textColor" ? "color" : plugin).split(' ').join('');
+    const pluginName = startCase(plugin === "textColor" ? "color" : plugin)
+      .split(" ")
+      .join("");
     const matchClassName = /'\w*'(?=, \w*\))/gm;
     const className = contents.match(matchClassName);
 
@@ -25,7 +27,8 @@ function main() {
       return null;
     }
 
-    fs.appendFileSync(path.relative(process.cwd(), "./stubs/plugin-class-name-mapping.js"),
+    fs.appendFileSync(
+      path.relative(process.cwd(), "./stubs/plugin-class-name-mapping.js"),
       `export const ${pluginName} = "${className[0].replace(/'/g, "")}";\n`
     );
   });

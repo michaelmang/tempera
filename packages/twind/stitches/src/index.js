@@ -62,56 +62,61 @@ export function getStitches(tokens = defaultTokens) {
 
     if (type === types.SIZE) {
       const property = keyList.slice(variantIndex + 1).join("-");
-      const className = getClassName(property, tokenValue, tailwindConfig.theme);
+      const className = getClassName(
+        property,
+        tokenValue,
+        tailwindConfig.theme
+      );
 
       if (!className) {
         return null;
       }
 
-      const existingValue = result[component]?.variants?.[type]?.[variant] || "";
+      const existingValue =
+        result[component]?.variants?.[type]?.[variant] || "";
 
       style = merge(style, {
         variants: {
           [type]: {
-            [variant]: existingValue
-              .concat(
-                " " + className
-              )
-              .trimStart(),
+            [variant]: existingValue.concat(" " + className).trimStart(),
           },
         },
       });
-    }
-    else if (type === types.VARIANT) {
+    } else if (type === types.VARIANT) {
       const stateIndex = variantIndex + 1;
       const state = keyList[stateIndex];
 
       const property = keyList.slice(stateIndex + 1).join("-");
-      const className = getClassName(property, tokenValue, tailwindConfig.theme);
-      
+      const className = getClassName(
+        property,
+        tokenValue,
+        tailwindConfig.theme
+      );
+
       if (!className) {
         return null;
       }
 
-      const existingValue = result[component]?.variants?.[type]?.[variant] || "";
-      const newValue = state === "default" ? className : `${state}:${className}`;
+      const existingValue =
+        result[component]?.variants?.[type]?.[variant] || "";
+      const newValue =
+        state === "default" ? className : `${state}:${className}`;
 
       style = merge(style, {
         variants: {
           [type]: {
-            [variant]: existingValue
-              .concat(
-                " " + newValue
-              )
-              .trimStart(),
+            [variant]: existingValue.concat(" " + newValue).trimStart(),
           },
         },
       });
-    }
-    else {
+    } else {
       const property = keyList.slice(variantIndex + 1).join("-");
-      const className = getClassName(property, tokenValue, tailwindConfig.theme);
-      
+      const className = getClassName(
+        property,
+        tokenValue,
+        tailwindConfig.theme
+      );
+
       if (!className) {
         return null;
       }
@@ -119,11 +124,7 @@ export function getStitches(tokens = defaultTokens) {
       const existingValue = result[component]?.[types.BASE] || "";
 
       style = {
-        [type]: existingValue
-          .concat(
-            " " + className
-          )
-          .trimStart(),
+        [type]: existingValue.concat(" " + className).trimStart(),
       };
     }
 
