@@ -2,6 +2,9 @@
 
 An API that generates twind/style shapes from a set of design tokens.
 
+## Demo
+[View On CodeSandbox](https://codesandbox.io/s/temperastitches-0ogls?file=/src/tokens.js)
+
 ## Installation
 
 ```bash
