@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getStitches matches the saved snapshot 1`] = `
+Object {
+  "button": Object {
+    "base": "text-medium text-primary",
+    "variants": Object {
+      "size": Object {
+        "small": "text-tiny",
+      },
+      "variant": Object {
+        "secondary": "bg-primary text-white text-small hover:text-tiny",
+      },
+    },
+  },
+}
+`;
