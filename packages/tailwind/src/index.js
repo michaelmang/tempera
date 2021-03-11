@@ -1,12 +1,13 @@
 import camelCase from "lodash.camelcase";
 import kebabCase from "lodash.kebabcase";
 import merge from "lodash.merge";
+import mergeWith from "lodash.mergewith";
 
 import * as matchers from "./matchers";
 import { validateTokens } from "./utils";
 import defaultConfig from "../stubs/default-tailwind-config";
 
-export default function getConfig(tokens) {
+export default function getConfig(tokens, { extend = false } = {}) {
   if (!validateTokens(tokens)) {
     throw new Error(
       "Tokens are not in a valid format. A flat set of key-value modules is expected."
@@ -76,5 +77,17 @@ export default function getConfig(tokens) {
     };
   });
 
-  return merge(defaultConfig, { theme: result });
+  const newConfig = { theme: result };
+
+  if (extend) {
+    return merge(defaultConfig, newConfig);
+  }
+
+  function customizer(defaultConfigValue, newConfigValue) {
+    if (typeof defaultConfigValue === "object") {
+      return newConfigValue;
+    }
+  }
+
+  return mergeWith(defaultConfig, newConfig, customizer);
 }

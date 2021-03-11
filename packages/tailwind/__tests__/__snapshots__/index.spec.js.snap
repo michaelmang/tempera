@@ -1,8 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getTailwindConfig invalid tokens matches the saved snapshot 1`] = `[Error: Tokens are not in a valid format. A flat set of key-value modules is expected.]`;
-
-exports[`getTailwindConfig matches the saved snapshot 1`] = `
+exports[`getTailwindConfig extend option is set matches the saved snapshot 1`] = `
 Object {
   "darkMode": false,
   "plugins": Array [],
@@ -782,6 +780,500 @@ Object {
       "40": "40",
       "50": "50",
       "auto": "auto",
+    },
+  },
+  "variantOrder": Array [
+    "first",
+    "last",
+    "odd",
+    "even",
+    "visited",
+    "checked",
+    "group-hover",
+    "group-focus",
+    "focus-within",
+    "hover",
+    "focus",
+    "focus-visible",
+    "active",
+    "disabled",
+  ],
+  "variants": Object {
+    "accessibility": Array [
+      "responsive",
+      "focus-within",
+      "focus",
+    ],
+    "alignContent": Array [
+      "responsive",
+    ],
+    "alignItems": Array [
+      "responsive",
+    ],
+    "alignSelf": Array [
+      "responsive",
+    ],
+    "animation": Array [
+      "responsive",
+    ],
+    "appearance": Array [
+      "responsive",
+    ],
+    "backgroundAttachment": Array [
+      "responsive",
+    ],
+    "backgroundClip": Array [
+      "responsive",
+    ],
+    "backgroundColor": Array [
+      "responsive",
+      "dark",
+      "group-hover",
+      "focus-within",
+      "hover",
+      "focus",
+    ],
+    "backgroundImage": Array [
+      "responsive",
+    ],
+    "backgroundOpacity": Array [
+      "responsive",
+      "dark",
+      "group-hover",
+      "focus-within",
+      "hover",
+      "focus",
+    ],
+    "backgroundPosition": Array [
+      "responsive",
+    ],
+    "backgroundRepeat": Array [
+      "responsive",
+    ],
+    "backgroundSize": Array [
+      "responsive",
+    ],
+    "borderCollapse": Array [
+      "responsive",
+    ],
+    "borderColor": Array [
+      "responsive",
+      "dark",
+      "group-hover",
+      "focus-within",
+      "hover",
+      "focus",
+    ],
+    "borderOpacity": Array [
+      "responsive",
+      "dark",
+      "group-hover",
+      "focus-within",
+      "hover",
+      "focus",
+    ],
+    "borderRadius": Array [
+      "responsive",
+    ],
+    "borderStyle": Array [
+      "responsive",
+    ],
+    "borderWidth": Array [
+      "responsive",
+    ],
+    "boxShadow": Array [
+      "responsive",
+      "group-hover",
+      "focus-within",
+      "hover",
+      "focus",
+    ],
+    "boxSizing": Array [
+      "responsive",
+    ],
+    "clear": Array [
+      "responsive",
+    ],
+    "container": Array [
+      "responsive",
+    ],
+    "cursor": Array [
+      "responsive",
+    ],
+    "display": Array [
+      "responsive",
+    ],
+    "divideColor": Array [
+      "responsive",
+      "dark",
+    ],
+    "divideOpacity": Array [
+      "responsive",
+      "dark",
+    ],
+    "divideStyle": Array [
+      "responsive",
+    ],
+    "divideWidth": Array [
+      "responsive",
+    ],
+    "fill": Array [
+      "responsive",
+    ],
+    "flex": Array [
+      "responsive",
+    ],
+    "flexDirection": Array [
+      "responsive",
+    ],
+    "flexGrow": Array [
+      "responsive",
+    ],
+    "flexShrink": Array [
+      "responsive",
+    ],
+    "flexWrap": Array [
+      "responsive",
+    ],
+    "float": Array [
+      "responsive",
+    ],
+    "fontFamily": Array [
+      "responsive",
+    ],
+    "fontSize": Array [
+      "responsive",
+    ],
+    "fontSmoothing": Array [
+      "responsive",
+    ],
+    "fontStyle": Array [
+      "responsive",
+    ],
+    "fontVariantNumeric": Array [
+      "responsive",
+    ],
+    "fontWeight": Array [
+      "responsive",
+    ],
+    "gap": Array [
+      "responsive",
+    ],
+    "gradientColorStops": Array [
+      "responsive",
+      "dark",
+      "hover",
+      "focus",
+    ],
+    "gridAutoColumns": Array [
+      "responsive",
+    ],
+    "gridAutoFlow": Array [
+      "responsive",
+    ],
+    "gridAutoRows": Array [
+      "responsive",
+    ],
+    "gridColumn": Array [
+      "responsive",
+    ],
+    "gridColumnEnd": Array [
+      "responsive",
+    ],
+    "gridColumnStart": Array [
+      "responsive",
+    ],
+    "gridRow": Array [
+      "responsive",
+    ],
+    "gridRowEnd": Array [
+      "responsive",
+    ],
+    "gridRowStart": Array [
+      "responsive",
+    ],
+    "gridTemplateColumns": Array [
+      "responsive",
+    ],
+    "gridTemplateRows": Array [
+      "responsive",
+    ],
+    "height": Array [
+      "responsive",
+    ],
+    "inset": Array [
+      "responsive",
+    ],
+    "justifyContent": Array [
+      "responsive",
+    ],
+    "justifyItems": Array [
+      "responsive",
+    ],
+    "justifySelf": Array [
+      "responsive",
+    ],
+    "letterSpacing": Array [
+      "responsive",
+    ],
+    "lineHeight": Array [
+      "responsive",
+    ],
+    "listStylePosition": Array [
+      "responsive",
+    ],
+    "listStyleType": Array [
+      "responsive",
+    ],
+    "margin": Array [
+      "responsive",
+    ],
+    "maxHeight": Array [
+      "responsive",
+    ],
+    "maxWidth": Array [
+      "responsive",
+    ],
+    "minHeight": Array [
+      "responsive",
+    ],
+    "minWidth": Array [
+      "responsive",
+    ],
+    "objectFit": Array [
+      "responsive",
+    ],
+    "objectPosition": Array [
+      "responsive",
+    ],
+    "opacity": Array [
+      "responsive",
+      "group-hover",
+      "focus-within",
+      "hover",
+      "focus",
+    ],
+    "order": Array [
+      "responsive",
+    ],
+    "outline": Array [
+      "responsive",
+      "focus-within",
+      "focus",
+    ],
+    "overflow": Array [
+      "responsive",
+    ],
+    "overscrollBehavior": Array [
+      "responsive",
+    ],
+    "padding": Array [
+      "responsive",
+    ],
+    "placeContent": Array [
+      "responsive",
+    ],
+    "placeItems": Array [
+      "responsive",
+    ],
+    "placeSelf": Array [
+      "responsive",
+    ],
+    "placeholderColor": Array [
+      "responsive",
+      "dark",
+      "focus",
+    ],
+    "placeholderOpacity": Array [
+      "responsive",
+      "dark",
+      "focus",
+    ],
+    "pointerEvents": Array [
+      "responsive",
+    ],
+    "position": Array [
+      "responsive",
+    ],
+    "resize": Array [
+      "responsive",
+    ],
+    "ringColor": Array [
+      "responsive",
+      "dark",
+      "focus-within",
+      "focus",
+    ],
+    "ringOffsetColor": Array [
+      "responsive",
+      "dark",
+      "focus-within",
+      "focus",
+    ],
+    "ringOffsetWidth": Array [
+      "responsive",
+      "focus-within",
+      "focus",
+    ],
+    "ringOpacity": Array [
+      "responsive",
+      "dark",
+      "focus-within",
+      "focus",
+    ],
+    "ringWidth": Array [
+      "responsive",
+      "focus-within",
+      "focus",
+    ],
+    "rotate": Array [
+      "responsive",
+      "hover",
+      "focus",
+    ],
+    "scale": Array [
+      "responsive",
+      "hover",
+      "focus",
+    ],
+    "skew": Array [
+      "responsive",
+      "hover",
+      "focus",
+    ],
+    "space": Array [
+      "responsive",
+    ],
+    "stroke": Array [
+      "responsive",
+    ],
+    "strokeWidth": Array [
+      "responsive",
+    ],
+    "tableLayout": Array [
+      "responsive",
+    ],
+    "textAlign": Array [
+      "responsive",
+    ],
+    "textColor": Array [
+      "responsive",
+      "dark",
+      "group-hover",
+      "focus-within",
+      "hover",
+      "focus",
+    ],
+    "textDecoration": Array [
+      "responsive",
+      "group-hover",
+      "focus-within",
+      "hover",
+      "focus",
+    ],
+    "textOpacity": Array [
+      "responsive",
+      "dark",
+      "group-hover",
+      "focus-within",
+      "hover",
+      "focus",
+    ],
+    "textOverflow": Array [
+      "responsive",
+    ],
+    "textTransform": Array [
+      "responsive",
+    ],
+    "transform": Array [
+      "responsive",
+    ],
+    "transformOrigin": Array [
+      "responsive",
+    ],
+    "transitionDelay": Array [
+      "responsive",
+    ],
+    "transitionDuration": Array [
+      "responsive",
+    ],
+    "transitionProperty": Array [
+      "responsive",
+    ],
+    "transitionTimingFunction": Array [
+      "responsive",
+    ],
+    "translate": Array [
+      "responsive",
+      "hover",
+      "focus",
+    ],
+    "userSelect": Array [
+      "responsive",
+    ],
+    "verticalAlign": Array [
+      "responsive",
+    ],
+    "visibility": Array [
+      "responsive",
+    ],
+    "whitespace": Array [
+      "responsive",
+    ],
+    "width": Array [
+      "responsive",
+    ],
+    "wordBreak": Array [
+      "responsive",
+    ],
+    "zIndex": Array [
+      "responsive",
+      "focus-within",
+      "focus",
+    ],
+  },
+}
+`;
+
+exports[`getTailwindConfig invalid tokens matches the saved snapshot 1`] = `[Error: Tokens are not in a valid format. A flat set of key-value modules is expected.]`;
+
+exports[`getTailwindConfig matches the saved snapshot 1`] = `
+Object {
+  "darkMode": false,
+  "plugins": Array [],
+  "presets": Array [],
+  "purge": Array [],
+  "theme": Object {
+    "colors": Object {
+      "primary-darker": "red",
+      "primary-default": "blue",
+      "primary-lighter": "yellow",
+    },
+    "fontFamily": Object {
+      "mono": Array [
+        "Roboto Mono",
+        "monospace",
+      ],
+    },
+    "fontSize": Object {
+      "medium": Array [
+        "1rem",
+        Object {
+          "lineHeight": "1.5rem",
+        },
+      ],
+      "small": Array [
+        "0.875rem",
+        Object {
+          "lineHeight": "1.25rem",
+        },
+      ],
+      "tiny": Array [
+        "0.75rem",
+        Object {
+          "lineHeight": "1rem",
+        },
+      ],
     },
   },
   "variantOrder": Array [
