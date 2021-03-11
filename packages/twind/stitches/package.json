@@ -1,7 +1,7 @@
 {
   "name": "@tempera/stitches",
   "version": "0.2.0-12",
-  "description": "An API that generates twind/style shapes from  a set of design tokens.",
+  "description": "An API that generates twind/style shapes from a set of design tokens.",
   "main": "build/index.js",
   "files": [
     "build"
