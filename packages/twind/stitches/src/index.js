@@ -8,30 +8,8 @@ import { getType, getClassName } from "./utils";
 import getTwind from "../../base";
 import getTailwindConfig from "../../../tailwind";
 
-const defaultTokens = {
-  ComponentButtonBaseFontSize: "0.875rem",
-  ComponentButtonBaseColor: "red",
-  ComponentButtonSmallFontSize: "1rem",
-  ComponentButtonSmallFontSize: "0.75rem",
-  ComponentButtonSecondaryDefaultFontSize: "1rem",
-  ComponentButtonSecondaryHoverFontSize: "0.75rem",
-  ColorPrimary: "red",
-  ComponentInputBaseFontSize: "0.875rem",
-  ComponentInputBaseColor: "red",
-  ComponentInputSmallFontSize: "1rem",
-  ComponentInputSmallFontSize: "0.75rem",
-  ComponentInputSecondaryDefaultFontSize: "1rem",
-  ComponentInputSecondaryHoverFontSize: "0.75rem",
-  FontSizeTiny: "0.75rem",
-  FontSizeSmall: "0.875rem",
-  FontSizeMedium: "1rem",
-  LineHeightTiny: "1rem",
-  LineHeightSmall: "1.25rem",
-  LineHeightMedium: "1.5rem",
-};
-
-export function getStitches(tokens = defaultTokens) {
-  const { style: twStyle, tw } = getTwind(tokens);
+export default function getStitches(tokens = defaultTokens) {
+  const { style: twStyle } = getTwind(tokens);
 
   const tailwindConfig = getTailwindConfig(tokens);
   const sizes = Object.keys(tailwindConfig.theme.fontSize);
@@ -136,5 +114,3 @@ export function getStitches(tokens = defaultTokens) {
 
   return result;
 }
-
-console.log(getStitches());
