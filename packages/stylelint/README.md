@@ -2,13 +2,13 @@
 
 A Stylelint plugin that helps avoid the adoption of unofficial design specifications.
 
-# Installation
+## Installation
 
 ```bash
 yarn add @tempera/stylelint-tokens
 ```
 
-# Usage
+## Usage
 
 Install [Stylelint](https://stylelint.io/user-guide/get-started) and update your configuration file to utilize the plugin.
 
@@ -25,7 +25,7 @@ module.exports = {
 };
 ```
 
-##### Tokens
+### Tokens
 The plugin expects these tokens to be in the [javascript/es6 format which you can generate using Style Dictionary](https://amzn.github.io/style-dictionary/#/formats?id=javascriptes6) except exported as CommonJS modules.
 
 In other words, flat CommonJS modules in PascalCase are expected.

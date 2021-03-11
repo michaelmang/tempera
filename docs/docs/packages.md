@@ -125,42 +125,52 @@ await postcss()
   .process(css, { from: undefined });
 ```
 
+##### Specs
+The plugin expects these specs/tokens to be in the [javascript/es6 format which you can generate using Style Dictionary](https://amzn.github.io/style-dictionary/#/formats?id=javascriptes6) except exported as CommonJS modules.
+
+In other words, flat CommonJS modules in PascalCase are expected.
+
+Example:
+
+```js
+module.exports.ColorBackgroundBase = "#ffffff";
+module.exports.ColorBackgroundAlt = "#fcfcfcfc";
+```
+
+Support for tokens in ES6 format is on the roadmap.
+
 [View the source](https://github.com/michaelmang/tempera/tree/master/packages/postcss)
 
-### postcss-scorecard
+### tailwind-config
 
-A PostCSS plugin that exposes hooks into design token adoption validation.
+An API that generates a Tailwind configuration from a set of design tokens.
 
 #### Installation
 
 ```bash
-yarn add @tempera/postcss-scorecard
+yarn add @tempera/tailwind-config
 ```
 
 #### Usage
 
 ```js
-const pxToRem = require("postcss-pxtorem");
-const expandShorthand = require("postcss-shorthand-expand");
+import getTailwindConfig from "@tempera/tailwind-config";
 
-await postcss()
-  .use(pxToRem())
-  .use(expandShorthand)
-  .use(
-    scorecard({
-      onInvalid: (score) => {
-        // do something when CSS property is not an official spec
-      },
-      onValid: (score) => {
-        // do something when CSS property is an official spec
-      },
-      onFinished: () => {
-        // do something after validation finishes
-      },
-      specs, // the official design tokens
-    })
-  )
-  .process(css, { from: undefined });
+const tailwindConfig = getTailwindConfig(tokens);
+
+// do something with the tailwind config
 ```
 
-[View the source](https://github.com/michaelmang/tempera/tree/master/packages/postcss)
+##### Tokens
+The plugin expects these specs/tokens to be in the [javascript/es6 format which you can generate using Style Dictionary](https://amzn.github.io/style-dictionary/#/formats?id=javascriptes6).
+
+In other words, flat modules in PascalCase are expected.
+
+Example:
+
+```js
+export const ColorPrimary = blue;
+export const ColorSecondary = yellow;
+```
+
+[View the source](https://github.com/michaelmang/tempera/tree/master/packages/tailwind)

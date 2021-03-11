@@ -1,0 +1,55 @@
+{
+  "name": "@tempera/tailwind-config",
+  "version": "0.1.2",
+  "description": "An API that generates a Tailwind configuration from a set of design tokens.",
+  "main": "build/index.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "prepublish": "npm run build",
+    "clean": "rm -rf build",
+    "build": "npm run clean && babel src stubs -d build -s",
+    "copy": "vendor-copy",
+    "format": "prettier --write .",
+    "test": "jest"
+  },
+  "author": "Mike Mangialardi <mikemangialardi94@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelmang/tempera.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michaelmang/tempera/issues"
+  },
+  "keywords": [
+    "design-tokens",
+    "tailwind"
+  ],
+  "homepage": "https://github.com/michaelmang/tempera",
+  "dependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "lodash.kebabcase": "^4.1.1",
+    "lodash.merge": "^4.6.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "tailwindcss": "^2.0.3",
+    "vendor-copy": "^2.0.0"
+  },
+  "vendorCopy": [
+    {
+      "from": "node_modules/tailwindcss/stubs/defaultConfig.stub.js",
+      "to": "stubs/default-tailwind-config.js"
+    },
+    {
+      "from": "node_modules/tailwindcss/colors.js",
+      "to": "colors.js"
+    }
+  ]
+}
