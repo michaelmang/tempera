@@ -1,6 +1,6 @@
 {
   "name": "@tempera/tailwind-config",
-  "version": "0.2.0-5",
+  "version": "0.2.0",
   "description": "An API that generates a Tailwind configuration from a set of design tokens.",
   "main": "build/index.js",
   "files": [
@@ -32,7 +32,7 @@
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
-    "@tempera/tailwind-config": "^0.2.0-5",
+    "@tempera/tailwind-config": "^0.2.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.kebabcase": "^4.1.1",
     "lodash.merge": "^4.6.2",

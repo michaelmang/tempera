@@ -1,6 +1,6 @@
 {
   "name": "@tempera/stylelint-tokens",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A StyleLint plugin for linting around adoption of design tokens.",
   "keywords": [
     "design-tokens",
@@ -35,7 +35,7 @@
     "stylelint": "^13.11.0"
   },
   "dependencies": {
-    "@tempera/postcss-scorecard": "^0.1.2"
+    "@tempera/postcss-scorecard": "^0.2.0"
   },
   "gitHead": "2f0f89563ed1e0eea61065eb589802693e643dff"
 }
