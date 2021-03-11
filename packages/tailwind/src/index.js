@@ -15,6 +15,10 @@ export default function getConfig(tokens) {
   let result = {};
 
   Object.entries(tokens).forEach(([tokenKey, tokenValue]) => {
+    if (tokenKey.toLowerCase().includes("component")) {
+      return null;
+    }
+
     const [matcherKey, matcherValue] = Object.entries(matchers).find(
       ([_, matcher]) => {
         const match = kebabCase(tokenKey).match(matcher);
