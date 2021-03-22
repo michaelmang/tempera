@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "An example of using the Tempera scorecard command as an API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "babel-node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.12",
+    "@babel/preset-env": "^7.13.12",
+    "string-argv": "^0.3.1",
+    "tempera": "^0.2.0"
+  }
+}

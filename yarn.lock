@@ -1020,17 +1020,32 @@
   dependencies:
     "@octokit/openapi-types" "^5.2.2"
 
-"@tempera/css-types@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@tempera/css-types/-/css-types-0.1.1.tgz#b6d10a26cd1716eb2972de6931f4f4ac912f2385"
-  integrity sha512-22F+mFHxxki7l8uhvr+dGSxlfGM9UjWWFh8vFL1KYS4e2fE6o6NsPJTAEAojEY9T3c+BWLOhW1UEZQL72bkmGQ==
+"@tempera/css-types@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@tempera/css-types/-/css-types-0.1.2.tgz#11db8dc10fa1e8d7061dd162d11aa61d96adaf33"
+  integrity sha512-0dVHNGu5/sjdYH8NDJapr6dwz0dMVqsfFqARszFy1lDxPsE4ODBTSMUN7epVWtMj4gfwarBFrIXw1rc0vXeLoQ==
   dependencies:
     prettier "^2.2.1"
 
-"@tempera/postcss-scorecard@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@tempera/postcss-scorecard/-/postcss-scorecard-0.1.1.tgz#e098f73aa81cf3aefdfa9d5d42a95e2083aa022f"
-  integrity sha512-2hEX2x6cHN40TOb8FyYnH/0ptAfV1RhswciMcde94ANSCWUbQj0depaPvMmiOCirCOjYuAbnG/QDfcd3/EzA4A==
+"@tempera/css-types@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@tempera/css-types/-/css-types-0.2.0.tgz#d2e2cf644e62aa724fd0740270992df773a3f9de"
+  integrity sha512-JyYpg114RNHjxBi5B9A06usPl+kPT25O1w50o6i5TL94hry5AjYjJ6UX6aTmQWzerON7iQm8QAILkXVOiaIxSg==
+  dependencies:
+    prettier "^2.2.1"
+
+"@tempera/postcss-scorecard@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@tempera/postcss-scorecard/-/postcss-scorecard-0.1.2.tgz#6bb38282698eb4f6f06a062e837461624eda1b22"
+  integrity sha512-j/9CrofYyKCvUCPUFewfuoMcnTzo6QW/MO5kymNxgnJnELP5RQTuXpGvaHlgccUQe5XOpK/sOiHj78u9AbNPnA==
+  dependencies:
+    nearest-color "^0.4.4"
+    tinycolor2 "^1.4.2"
+
+"@tempera/postcss-scorecard@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@tempera/postcss-scorecard/-/postcss-scorecard-0.2.0.tgz#8af3d57c8f1516f2aaf2bde08f2f9fe02dae4a9e"
+  integrity sha512-mfWQ8vl6zq+WMDFAZcnJqn7xIs1mjRKbRjD0ixZilP09MM8f0Ih+D4OUUY2KCQEmqrUstyKzfTVtHA3SDO5Eiw==
   dependencies:
     nearest-color "^0.4.4"
     tinycolor2 "^1.4.2"
@@ -6014,6 +6029,11 @@ strict-uri-encode@^2.0.0:
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz"
   integrity sha1-ucczDHBChi9rFC3CdLvMWGbONUY=
 
+string-argv@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.3.1.tgz#95e2fbec0427ae19184935f816d74aaa4c5c19da"
+  integrity sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg==
+
 string-width@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-1.0.2.tgz"
@@ -6263,6 +6283,32 @@ temp-write@^3.4.0:
     pify "^3.0.0"
     temp-dir "^1.0.0"
     uuid "^3.0.1"
+
+tempera@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/tempera/-/tempera-0.2.0.tgz#8d93a50e12ab3921c6fd13777d31207f4ac66878"
+  integrity sha512-7FmZgnWaAIquXIXEci5Gv4Sdhy7mAtZobL4PTUujFO/7DeXMPcZmIez3VqWVRZ/mA+J2KFa5/40Yxj2e3w68KA==
+  dependencies:
+    "@oclif/command" "^1"
+    "@oclif/config" "^1"
+    "@oclif/plugin-help" "^3"
+    "@tempera/css-types" "^0.2.0"
+    "@tempera/postcss-scorecard" "^0.2.0"
+    cfonts "^2.9.1"
+    chalk "^4.1.0"
+    cli-pie "^2.4.2"
+    cli-table3 "^0.6.0"
+    extract-css-core "^2.3.1"
+    json-beautify "^1.1.1"
+    lodash.groupby "^4.6.0"
+    lodash.kebabcase "^4.1.1"
+    lodash.sortby "^4.7.0"
+    lodash.startcase "^4.4.0"
+    ora "^5.3.0"
+    postcss "^8.2.7"
+    postcss-pxtorem "^5.1.1"
+    postcss-shorthand-expand "^1.0.1"
+    tinycolor2 "^1.4.2"
 
 text-extensions@^1.0.0:
   version "1.9.0"

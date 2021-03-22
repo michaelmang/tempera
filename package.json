@@ -27,6 +27,8 @@
     "postcss": "^8.2.7",
     "postcss-pxtorem": "^5.1.1",
     "postcss-shorthand-expand": "^1.0.1",
+    "string-argv": "^0.3.1",
+    "tempera": "^0.2.0",
     "tinycolor2": "^1.4.2"
   },
   "devDependencies": {
